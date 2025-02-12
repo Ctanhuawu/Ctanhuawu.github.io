@@ -1,0 +1,11 @@
+http://blog.041218.xyz/tags/index.html
+http://blog.041218.xyz/categories/index.html
+http://blog.041218.xyz/pages/Ubuntu/ubuntu24_10_xorg_fix/
+http://blog.041218.xyz/pages/other/hello-world/
+http://blog.041218.xyz/
+http://blog.041218.xyz/tags/%E6%90%AD%E5%BB%BA%E6%B5%8B%E8%AF%95/
+http://blog.041218.xyz/tags/Ubuntu/
+http://blog.041218.xyz/tags/Xrdp/
+http://blog.041218.xyz/tags/Xorgxrdp/
+http://blog.041218.xyz/categories/other/
+http://blog.041218.xyz/categories/Ubuntu/
