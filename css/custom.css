@@ -1,0 +1,7 @@
+@import '/fonts/Zhuzi-fontchw4/result.css';
+@import '/css/fix_console.css';
+
+@font-face {
+  font-family: "MapleMono-Regular";
+  src: url("/fonts/MapleMono-Regular.woff2") format("woff2");
+}
