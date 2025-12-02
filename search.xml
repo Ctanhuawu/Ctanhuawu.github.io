@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hexo 字体分片加载实践</title>
+      <link href="/post/29914.html"/>
+      <url>/post/29914.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="前言">前言</h2><p><strong>知周所众</strong>，中文字体的体积实在夸张，动不动就十几 MB。再加上白嫖 CDN 的带宽本来就小，页面一加载就慢得让人头疼，首屏甚至能卡到怀疑人生。可同时，大家又都希望通过自定义字体给博客加点个性，让站点看起来更有味道。于是问题就出现了：既想保持风格，又不想让网站加载速度变成 PPT，这就必须想办法把字体优化一下。</p><hr><h2 id="技术原理">技术原理</h2><p>既然中文字体大得夸张，要优化加载速度，最核心的一步就是：把大块的 <strong>TTF</strong> 切成小巧的 <strong>WOFF2</strong> 分片。手动切肯定是不现实的，所以我们一般会借助现成的字体分片工具，它们能自动分析你需要的字符，然后生成只保留必要字形的字体文件。</p><p>常见做法就是用工具把字体拆成几个片段，比如常用汉字、扩展汉字、英文 / 数字、标点符号等等。这样浏览器遇到中文就加载中文那片，需要英文就加载英文那片，实现真正的 “按需加载”。</p><p>比如使用一些在线<strong>子集化工具</strong>。核心目的都是一样的：减少字体内容，让每个片段越小越好，然后在 CSS 里用 unicode-range 让浏览器自动选择它该加载哪一片。</p><p>最终效果就是：原本十几 MB 的字体，可能被拆成几个几十 KB 的小文件；加载速度提升明显，博客的个性化字体也保留，几乎两全其美。</p><hr><h2 id="在线字体分包器">在线字体分包器</h2><p><img src="https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E5%9C%A8%E7%BA%BF%E5%AD%97%E4%BD%93%E5%88%86%E5%8C%85%E5%99%A8.png" alt="alt text"></p><table><thead><tr><th>项目地址</th><th>在线使用</th></tr></thead><tbody><tr><td><a href="https://github.com/KonghaYao/cn-font-split">cn-font-split</a></td><td><a href="https://chinese-font.netlify.app/zh-cn/online-split/">在线字体分包器</a></td></tr></tbody></table><hr><h2 id="实践（以-Hexo-anzhiyu-为例）">实践（以 Hexo anzhiyu 为例）</h2><div class="note info flat"><p>准备字体 → 上传到主题 → 写 CSS → 配置主题 → 完成。</p></div><ol><li><p>使用在线工具生成分片字体</p><p>将未分包的字体上传到在线字体分包器中<br>点击 <strong>【点击开始字体分包】</strong> 等待分包完成后点击 <strong>【压缩下载 zip】</strong></p><p><img src="https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E5%AD%97%E4%BD%93%E5%88%86%E5%8C%85%E6%BC%94%E7%A4%BA.png" alt="alt text"></p><p>每个文件大概几十 KB，非常轻量。</p></li><li><p>将字体上传到主题目录</p><p>把下载的分片文件 zip 放到：<code>/source/fonts/</code> 中, 如果没有的话就自己建一个文件夹即可。</p><p>最终目录示例：</p> <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">fonts/</span><br><span class="line">└── myfont/</span><br><span class="line">      ├── MyFont-basic.woff2</span><br><span class="line">      ├── MyFont-extA.woff2</span><br><span class="line">      ├── MyFont-latin.woff2</span><br><span class="line">      ├── MyFont-symbol.woff2</span><br><span class="line">      └── result.css</span><br></pre></td></tr></tbody></table></figure></li><li><p>添加自定义 css</p><p>在 <code>_config.anzhiyu.yml</code> 中</p> <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Inject</span></span><br><span class="line"><span class="comment"># 插入代码到头部 &lt;/head&gt; 之前 和 底部 &lt;/body&gt; 之前</span></span><br><span class="line"><span class="attr">inject:</span></span><br><span class="line">    <span class="attr">head:</span></span><br><span class="line">        <span class="comment"># 自定义css</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&lt;link</span> <span class="string">rel="stylesheet"</span> <span class="string">href="/css/custom.css"</span> <span class="string">media="defer"</span> <span class="string">onload="this.media='all'"&gt;</span></span><br></pre></td></tr></tbody></table></figure><p>在 <code>source/css/custom.css</code> 中</p> <figure class="highlight css"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">'/fonts/myfont/result.css'</span>;</span><br></pre></td></tr></tbody></table></figure></li><li><p>在安知鱼主题中启用字体</p><p>在 <code>_config.anzhiyu.yml</code> 中</p> <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">    <span class="attr">global-font-size:</span> <span class="string">16px</span></span><br><span class="line">    <span class="attr">code-font-size:</span></span><br><span class="line">    <span class="attr">font-family:</span> <span class="string">"FZFW ZhuZi A YuanS D &lt;- yourfont"</span></span><br><span class="line">    <span class="attr">code-font-family:</span> <span class="string">MapleMono-Regular,</span> <span class="string">consolas,</span> <span class="string">Menlo,</span> <span class="string">"PingFang SC"</span><span class="string">,</span> <span class="string">"Microsoft JhengHei"</span><span class="string">,</span> <span class="string">"Microsoft YaHei"</span><span class="string">,</span> <span class="string">sans-serif</span></span><br></pre></td></tr></tbody></table></figure></li></ol><p>这样全站都使用你刚才分片后的字体了。</p><hr><h2 id="效果展示">效果展示</h2><p>可以看到分片加载的速度非常快<br><img src="https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E6%95%88%E6%9E%9C%E5%9B%BE.png" alt="alt text"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 安知鱼 </tag>
+            
+            <tag> Blog </tag>
+            
+            <tag> 字体 </tag>
+            
+            <tag> font </tag>
+            
+            <tag> 优化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>由于 CDN 下线导致的，安知鱼主题图片无法显示 / 加载</title>
+      <link href="/post/51626.html"/>
+      <url>/post/51626.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="引言">引言</h2><p>在一次更新和调试中，我突然发现自己的博客所有图片都加载不出来，文章二维码也失效了。起初我还以为是主题配置出了错，但仔细排查后才发现，真正的原因是 字节跳动公共静态资源库被下线，导致主题依赖的外部 JS 资源无法正常获取。</p><p>这篇文章记录了我定位问题的过程，以及通过 替换 CDN 链接 来解决故障的方法，希望能帮到遇到同样问题的朋友。</p><hr><h2 id="典型症状">典型症状</h2><ul><li>全站图片无法加载且控制台中显示多个依赖无法加载</li><li>部分功能无法使用（如文章 QRCode）</li><li>从主页进入文章可显示图片，但在文章页面刷新后无法显示图片</li></ul><p><img src="https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222032165.png" alt="症状表现"></p><hr><h2 id="故障原因">故障原因</h2><div calss="anzhiyu-tag-link"><a class="tag-Link" target="_blank" href="https://linux.do/t/topic/862052">    <div class="tag-link-tips">引用站外地址</div>    <div class="tag-link-bottom">        <div class="tag-link-left" style="">          <i class="anzhiyufont anzhiyu-icon-link" style=""></i>        </div>        <div class="tag-link-right">            <div class="tag-link-title">字节跳动静态资源公共库因黑产问题下线</div>            <div class="tag-link-sitename">tls801</div>        </div>        <i class="anzhiyufont anzhiyu-icon-angle-right"></i>    </div>    </a></div><p><img src="https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222151765.png" alt="字节跳动静态资源公共库因黑产问题下线"></p><hr><h2 id="解决方法">解决方法</h2><h3 id="定位故障原因">定位故障原因</h3><p>在故障页面按下 <kbd>f12</kbd>，进入网络页面点击刷新查看 Js 获取情况</p><p><img src="https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222822500.png" alt="定位故障示例"></p><h3 id="以-qrcode-min-js-无法加载为例">以 <code>qrcode.min.js</code> 无法加载为例</h3><p>复制请求 URL 使用编辑器搜索定位替换为可用的 cdn 即可（如 VSCode）</p><p>替换<br><code>https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js</code><br>为<br><code>https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js</code></p><p><img src="https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816223300108.png" alt="替换示例"></p><hr><h2 id="可能的隐患">可能的隐患</h2><p>在 <code>themes\anzhiyu\sw-rules.js</code> 还有对 &lt;<a href="http://bytecdntp.com">bytecdntp.com</a>&gt; 的引用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 安知鱼 </tag>
+            
+            <tag> anzhiyu </tag>
+            
+            <tag> Fix </tag>
+            
+            <tag> Blog </tag>
+            
+            <tag> CDN </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程</title>
+      <link href="/post/14968.html"/>
+      <url>/post/14968.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><div class="note warning flat"><p>已有更加优雅的实现，详见 <a href="https://github.com/nelvko/clash-for-linux-install">clash-for-linux-install</a></p></div><h2 id="引言">引言</h2><p>在使用 Linux 服务器的过程中，常常遇到这样的问题：在 Clash 启动后还要为各种应用或服务设置系统代理，还可能遇到一些无法设置代理的软件导致无法访问，所以我们可以通过 Clash 的 TUN 模式 实现系统级的透明代理，让所有应用无需单独配置代理即可直接访问外网。再配合 Yacd 可视化管理面板，我们就能非常直观地管理和切换节点，大大提升使用体验。</p><h2 id="开始前准备">开始前准备</h2><ul><li>安装脚本依赖<ul><li>git</li><li>iproute</li><li>nftables</li></ul></li><li>Yacd 依赖<ul><li>docker</li></ul></li></ul><hr><h2 id="安装-Clash-TUN">安装 Clash-TUN</h2><h3 id="安装-clash-tun">安装 <a href="https://github.com/blue7wings/clash-tun">clash-tun</a></h3><ol><li><p>克隆项目</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/blue7wings/clash-tun</span><br><span class="line"><span class="comment"># 连不上 github 可使用反代</span></span><br><span class="line"><span class="comment"># 如： git clone https://gh.llkk.cc/https://github.com/blue7wings/clash-tun</span></span><br><span class="line"><span class="built_in">cd</span> clash-tun</span><br></pre></td></tr></tbody></table></figure></li><li><p>配置设置</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> /srv/clash/</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> config.yaml Country.mmdb /srv/clash/</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> clash /usr/bin/</span><br></pre></td></tr></tbody></table></figure></li></ol><h3 id="安装-clash-core">安装 <a href="(https://downloads.clash.wiki/ClashPremium/)">clash-core</a></h3><ol><li><p>下载 Clash Core 并解压</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># AMD64 架构为例</span></span><br><span class="line">wget https://downloads.clash.wiki/ClashPremium/clash-linux-amd64-2023.08.17.gz</span><br><span class="line"><span class="comment"># 使用 gunzip 解压</span></span><br><span class="line">gunzip clash-linux-amd64-2023.08.17.gz</span><br></pre></td></tr></tbody></table></figure></li><li><p>安装 Clash 并设置权限</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mv</span> clash-linux-amd64-2023.08.17 /usr/bin/clash</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 775 /usr/bin/clash</span><br></pre></td></tr></tbody></table></figure></li></ol><h3 id="完成安装">完成安装</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ./installer.sh install</span><br></pre></td></tr></tbody></table></figure><hr><h2 id="安装-Yacd">安装 Yacd</h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">docker run -p 1234:80 -d --name yacd ghcr.io/haishanh/yacd:master</span><br></pre></td></tr></tbody></table></figure><p>安装后可通过 <a href="http://hostip:1234">http://hostip:1234</a> 访问</p><hr><h2 id="修改-config-yaml-以开启-Tun-和-Web-管理">修改 <code>config.yaml</code> 以开启 Tun 和 Web 管理</h2><h3 id="通过-vim-修改配置-文件">通过 <code>vim</code> 修改配置 文件</h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> vim /srv/clash/config.yaml</span><br></pre></td></tr></tbody></table></figure><h4 id="向配置文件中修改以下选项">向配置文件中修改以下选项</h4><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 主机修改为 0.0.0.0 以支持外部访问</span></span><br><span class="line"><span class="comment"># 端口号修改为 9091 以避免与 web 管理冲突</span></span><br><span class="line"><span class="attr">external-controller:</span> <span class="string">"0.0.0.0:9091"</span></span><br><span class="line"><span class="comment"># 启用tun</span></span><br><span class="line"><span class="attr">tun:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure><h4 id="修改后的配置文件示例">修改后的配置文件示例</h4><figure class="highlight yaml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">mixed-port:</span> <span class="number">7890</span></span><br><span class="line"><span class="attr">allow-lan:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">bind-address:</span> <span class="string">"*"</span></span><br><span class="line"><span class="attr">mode:</span> <span class="string">rule</span></span><br><span class="line"><span class="attr">log-level:</span> <span class="string">info</span></span><br><span class="line"><span class="attr">external-controller:</span> <span class="string">"0.0.0.0:9091"</span></span><br><span class="line"><span class="attr">tun:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">dns:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">ipv6:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">default-nameserver:</span> [<span class="number">223.5</span><span class="number">.5</span><span class="number">.5</span>, <span class="number">119.29</span><span class="number">.29</span><span class="number">.29</span>]</span><br><span class="line">  <span class="attr">enhanced-mode:</span> <span class="string">fake-ip</span></span><br><span class="line">  <span class="attr">fake-ip-range:</span> <span class="number">198.18</span><span class="number">.0</span><span class="number">.1</span><span class="string">/16</span></span><br><span class="line">  <span class="attr">use-hosts:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">nameserver:</span> [<span class="number">223.5</span><span class="number">.5</span><span class="number">.5</span>, <span class="number">119.29</span><span class="number">.29</span><span class="number">.29</span>, <span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span>, <span class="number">1.1</span><span class="number">.1</span><span class="number">.1</span>]</span><br><span class="line">  <span class="attr">fallback:</span></span><br><span class="line">    [<span class="number">8.8</span><span class="number">.4</span><span class="number">.4</span>, <span class="number">1.0</span><span class="number">.0</span><span class="number">.1</span>, <span class="string">"https://dns.twnic.tw/dns-query"</span>, <span class="string">"tls://8.8.4.4:853"</span>]</span><br><span class="line">  <span class="attr">fallback-filter:</span> { <span class="attr">geoip:</span> <span class="literal">true</span>, <span class="attr">ipcidr:</span> [<span class="number">240.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/4</span>, <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/32</span>] }</span><br><span class="line"><span class="attr">proxies:</span></span><br></pre></td></tr></tbody></table></figure><div class="note success flat"><p>修改后就能通过 web 管理选择连接节点了</p></div><hr><h2 id="最终效果">最终效果</h2><p><img src="https://api.041218.xyz/pic/Blog/2025/08/16/18-20250816183419209.png" alt="clash服务"></p><p><img src="https://api.041218.xyz/pic/Blog/2025/08/16/18-20250816183639583.png" alt="yacd控制台"></p><hr><h2 id="服务管理">服务管理</h2><ul><li><p>设置开机自启（如有需要）</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> clash</span><br></pre></td></tr></tbody></table></figure></li><li><p>启动 <code>clash</code></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start clash</span><br></pre></td></tr></tbody></table></figure></li><li><p>查看服务状态</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl status clash</span><br></pre></td></tr></tbody></table></figure></li></ul><hr><h2 id="一些疑难杂症">一些疑难杂症</h2><h3 id="yacd-无法连接到-clash-解决方案">yacd 无法连接到 clash 解决方案</h3><ul><li>方法一：放行 <code>external-controller</code> 端口<br><code>sudo firewall-cmd --add-port=9091/tcp</code></li><li>方法二：关闭防火墙<div class="note warning flat"><p>尽量不要关闭防火墙，这样会使你的服务器更易受到攻击</p></div><code>sudo systemctl stop firewalld.service</code></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> Server </tag>
+            
+            <tag> Fedora </tag>
+            
+            <tag> Clash </tag>
+            
+            <tag> TUN </tag>
+            
+            <tag> NoGUI </tag>
+            
+            <tag> Yacd </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>飞牛 OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接）</title>
+      <link href="/post/17284.html"/>
+      <url>/post/17284.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="开始前准备">开始前准备</h2><ul><li>1Panel</li><li>DNS 账号（本文以 Cloudflare 为例）</li><li>有手就行</li></ul><hr><h2 id="创建证书推送文件夹">创建证书推送文件夹</h2><p>在用户目录下创建一个接收证书的文件夹，1Panel 申请的证书将会推送到这里（如下图所示）</p><div class="note info flat"><p>建议右键文件夹后在文件夹详细信息中复制原始路径备用</p></div><p><img src="https://api.041218.xyz/pic/Blog/2025/07/23/21-%E8%AF%81%E4%B9%A6%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84.png" alt="21-证书存放路径"></p><h2 id="使用-1Panel-申请-SSL-证书">使用 1Panel 申请 SSL 证书</h2><h3 id="1-进入证书页添加域名-DNS-账号">1. 进入证书页添加域名 DNS 账号</h3><p>进入证书页后点击 DNS 账户按钮添加 DNS 账户<br><img src="https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%88%9B%E5%BB%BAdns%E8%B4%A6%E6%88%B7.png" alt="21-创建dns账户"></p><p>进入 <a href="https://dash.cloudflare.com/profile/api-tokens">Cloudflare Dashboard</a> 获取 API 令牌，点击创建令牌创建具有编辑 DNS 权限的令牌。<br><img src="https://api.041218.xyz/pic/Blog/2025/07/23/21-%E8%8E%B7%E5%8F%96API%E4%BB%A4%E7%89%8C.png" alt="21-获取API令牌"></p><h3 id="2-创建-Acme-账户">2. 创建 Acme 账户</h3><p>填写邮箱后点击确定<br><img src="https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%88%9B%E5%BB%BAAcme%E8%B4%A6%E6%88%B7.png" alt="21-创建Acme账户"></p><h3 id="3-申请域名并设置推送文件夹证书">3. 申请域名并设置推送文件夹证书</h3><h4 id="输入主域名后按需填写选项，开启自动续签，并设置证书推送目录">输入主域名后按需填写选项，开启自动续签，并设置证书推送目录</h4><p><img src="https://api.041218.xyz/pic/Blog/2025/07/23/21-%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6.png" alt="21-申请证书"></p><h4 id="设置重命名脚本">设置重命名脚本</h4><p>1Panel 申请的证书默认为 <code>证书文件fullchain.pem 密钥文件：privkey.pem</code>，重命名以便我们更好的管理证书。</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># xxx 改为你的主域名</span></span><br><span class="line"><span class="built_in">mv</span> fullchain.pem xxx.crt</span><br><span class="line"><span class="built_in">mv</span> privkey.pem xxx.key</span><br></pre></td></tr></tbody></table></figure><p>最后点击确认，等待几分钟即可申请到证书。</p><hr><h2 id="将证书上传到-FnOS">将证书上传到 FnOS</h2><p>将推送目录的证书下载后上传到 FnOS（中间证书可不填）<br><img src="https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%AF%BC%E5%85%A5%E8%AF%81%E4%B9%A6.png" alt="21-导入证书"></p><hr><h2 id="使用软链接实现证书自动续签">使用软链接实现证书自动续签</h2><h3 id="1-进入终端（可使用-1Panel-中的终端）">1. 进入终端（可使用 1Panel 中的终端）</h3><p>先进入飞牛 nas 的证书存放目录, 这里面存放了添加到中的域名证书</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/trim/var/trim_connect/ssls</span><br></pre></td></tr></tbody></table></figure><p>继续进入需要自动续签的域名目录, 如：<code>/usr/trim/var/trim_connect/ssls/xxx.com/1753268297/</code>,这目录下存放了该域名的证书和私钥</p><h3 id="2-使用命令软链接私钥和证书">2. 使用命令软链接私钥和证书</h3><div class="note warning flat"><p>需要先删除原有的证书和私钥文件</p></div><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 删除原有证书文件</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">rm</span> xxx.crt xxx.key</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加软链接文件（如有需要请更改链接路径）</span></span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">ln</span> -s /vol1/1000/Certs/xxx.crt xxx.crt</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">ln</span> -s /vol1/1000/Certs/xxx.key xxx.key</span><br></pre></td></tr></tbody></table></figure><p>如有需要可通过 <code>cat</code> 命令查看, 是否链接成功</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">cat</span> xxx.crt</span><br><span class="line"><span class="built_in">cat</span> xxx.key</span><br></pre></td></tr></tbody></table></figure><hr><h2 id="大功告成">大功告成</h2><hr><h2 id="可能遇到的问题">可能遇到的问题</h2><ul><li>如遇到申请证书时出现错误，可以尝试打开<code>禁用CNAME</code>选项</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> FnOS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> FnOS </tag>
+            
+            <tag> SSL </tag>
+            
+            <tag> Https </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复</title>
+      <link href="/post/32059.html"/>
+      <url>/post/32059.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" type="text&#x2F;css" href="https://cdn.jsdelivr.net/npm/hexo-tag-hint@0.3.1/dist/hexo-tag-hint.min.css"><h2 id="问题描述">问题描述</h2><p>Ubuntu 更新到 24.10 后, 使用 apt 安装 xrdp</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install xrdp</span><br></pre></td></tr></tbody></table></figure><p>添加 gnome-session 到 ~/.xsession</p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"gnome-session"</span> | <span class="built_in">tee</span> ~/.xsession</span><br></pre></td></tr></tbody></table></figure><p>在 Windows 上使用远程桌面连接 Ubuntu 登录 Xorg 后闪退</p><p>查看 <code>.xorgxrdp.10.log</code> 发现客户端的版本比预期的要旧，但是更新客户端版本也不行。</p><figure class="highlight accesslog"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">[ 10160.761]</span> rdpClientConProcessMsgClientInfo:</span><br><span class="line"><span class="string">[ 10160.761]</span> expected xrdp client_info version <span class="number">20230425</span>, got <span class="number">20210723</span></span><br><span class="line"><span class="string">[ 10160.761]</span> (EE)</span><br><span class="line">Fatal server error:</span><br><span class="line"><span class="string">[ 10160.761]</span> (EE) Incompatible xrdp version detected  - please recompile(EE)</span><br><span class="line"><span class="string">[ 10160.761]</span> (EE)</span><br><span class="line">Please consult the The X.Org Foundation support</span><br><span class="line">         at http://wiki.x.org</span><br><span class="line"> for help.</span><br><span class="line"><span class="string">[ 10160.761]</span> (EE) Please also check the log file at <span class="string">".xorgxrdp.10.log"</span> for additional information.</span><br><span class="line"><span class="string">[ 10160.761]</span> (EE)</span><br><span class="line"><span class="string">[ 10160.762]</span> rdpmouseControl: what <span class="number">4</span></span><br><span class="line"><span class="string">[ 10160.762]</span> rdpkeybControl: what <span class="number">4</span></span><br><span class="line"><span class="string">[ 10160.762]</span> (II) AIGLX: Suspending AIGLX clients for VT switch</span><br><span class="line"><span class="string">[ 10160.762]</span> rdpLeaveVT:</span><br><span class="line"><span class="string">[ 10160.764]</span> (EE) Server terminated with error (<span class="number">1</span>). Closing log file.</span><br></pre></td></tr></tbody></table></figure><p>其实这是 Ubuntu Oracular 源 Xrdp 的一个 Bug</p><p><a href="https://bugs.launchpad.net/ubuntu/+source/xrdp/+bug/2085347">在 Oracular 中，Xrdp 和 xorgxrdp 被编译为不同的版本</a></p><hr><h2 id="解决方法">解决方法</h2><h3 id="方法一、使用旧版的-xorgxrdp-包">方法一、使用旧版的 xorgxrdp 包</h3><h4 id="1-下载旧版-xorgxrdp-包">1. 下载旧版 xorgxrdp 包</h4><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">wget http://launchpadlibrarian.net/640882094/xorgxrdp_0.9.19-1_amd64.deb</span><br></pre></td></tr></tbody></table></figure><h4 id="2-使用-dpkg-安装">2. 使用 dpkg 安装</h4><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> dpkg -i xorgxrdp_0.9.19-1_amd64.deb</span><br></pre></td></tr></tbody></table></figure><h4 id="3-重启-xrdp-服务">3. 重启 xrdp 服务</h4><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl restart xrdp</span><br></pre></td></tr></tbody></table></figure><h4 id="4-禁止-xorgxrdp-自动更新">4. 禁止 xorgxrdp 自动更新</h4><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt-mark hold xorgxrdp</span><br></pre></td></tr></tbody></table></figure><h3 id="方法二、修改-apt-更新源并更新-Xorgxrdp">方法二、修改 apt 更新源并更新 Xorgxrdp</h3><div class="note warning flat"><p>此方法我尝试了也没成功，有效性待定</p></div><h4 id="1-编辑-etc-apt-sources-list-d-ubuntu-sources-，在-oracular-backports-后面添加-oracular-proposed">1. 编辑 <code>/etc/apt/sources.list.d/ubuntu.sources</code> ，在 <code>oracular-backports</code> 后面添加 <code>oracular-proposed</code></h4><p><img src="https://api.041218.xyz/pic/Blog/20250209222138586.png" alt="编辑示例"></p><h4 id="2-sudo-apt-update-更新软件源">2. <code>sudo apt update</code> 更新软件源</h4><h4 id="3-sudo-install-xrdp-oracular-proposed-，使用指定软件源更新xrdp">3. <code>sudo install xrdp/oracular-proposed</code> ，使用指定软件源更新<code>xrdp</code></h4><hr><h2 id="使用远程桌面连接测试">使用远程桌面连接测试</h2><p><img src="https://api.041218.xyz/pic/Blog/xorgxrdp%E4%BF%AE%E5%A4%8D%E5%90%8E%E8%BF%9E%E6%8E%A5%E6%A1%8C%E9%9D%A2.png" alt="连接修复成功"></p><hr><h2 id="参考资料">参考资料</h2><ul><li><a href="https://askubuntu.com/questions/1530296/remote-desktop-connections-from-windows-to-stopped-working-after-upgrading-to-ub">xorg - Remote desktop connections from Windows to stopped working after upgrading to Ubuntu 24.10 - Ask Ubuntu</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Ubuntu </tag>
+            
+            <tag> Xrdp </tag>
+            
+            <tag> Xorgxrdp </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

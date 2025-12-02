@@ -1,0 +1,13 @@
+@media screen and (max-width: 1200px) { 
+    #console .console-card-group {
+        display: flex !important;
+    }
+
+    #console .console-card-group-left {
+        display: none !important;
+    }
+
+    #console .console-card.tags {
+        height: auto !important;
+    }
+}
