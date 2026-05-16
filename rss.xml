@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Ctanhuawu の Blog</title><description>无限进步</description><link>https://blog.ccwait.com/</link><language>zh_CN</language><item><title>Hexo 字体分片加载实践</title><link>https://blog.ccwait.com/posts/hexo-font-split/</link><guid isPermaLink="true">https://blog.ccwait.com/posts/hexo-font-split/</guid><description>通过字体分片和按需加载，降低中文字体对 Hexo 博客首屏性能的影响。</description><pubDate>Tue, 02 Dec 2025 07:30:26 GMT</pubDate><content:encoded>&lt;h2&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;众所周知&lt;/strong&gt;，中文字体的体积实在夸张，动不动就十几 MB。再加上白嫖 CDN 的带宽本来就小，页面一加载就慢得让人头疼，首屏甚至能卡到怀疑人生。可同时，大家又都希望通过自定义字体给博客加点个性，让站点看起来更有味道。于是问题就出现了：既想保持风格，又不想让网站加载速度变成 PPT，这就必须想办法把字体优化一下。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;技术原理&lt;/h2&gt;
+&lt;p&gt;既然中文字体大得夸张，要优化加载速度，最核心的一步就是把大块的 &lt;strong&gt;TTF&lt;/strong&gt; 切成小巧的 &lt;strong&gt;WOFF2&lt;/strong&gt; 分片。手动切肯定是不现实的，所以一般会借助现成的字体分片工具。它们能自动分析你需要的字符，然后生成只保留必要字形的字体文件。&lt;/p&gt;
+&lt;p&gt;常见做法就是用工具把字体拆成几个片段，比如常用汉字、扩展汉字、英文数字、标点符号等等。这样浏览器遇到中文就加载中文那片，需要英文就加载英文那片，实现真正的按需加载。&lt;/p&gt;
+&lt;p&gt;比如使用一些在线子集化工具。核心目的都是一样的：减少字体内容，让每个片段越小越好，然后在 CSS 里用 &lt;code&gt;unicode-range&lt;/code&gt; 让浏览器自动选择它该加载哪一片。&lt;/p&gt;
+&lt;p&gt;最终效果就是：原本十几 MB 的字体，可能被拆成几个几十 KB 的小文件；加载速度提升明显，博客的个性化字体也保留，几乎两全其美。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;在线字体分包器&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E5%9C%A8%E7%BA%BF%E5%AD%97%E4%BD%93%E5%88%86%E5%8C%85%E5%99%A8.png&quot; alt=&quot;在线字体分包器&quot; /&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目地址&lt;/th&gt;
+&lt;th&gt;在线使用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&quot;https://github.com/KonghaYao/cn-font-split&quot;&gt;cn-font-split&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&quot;https://chinese-font.netlify.app/zh-cn/online-split/&quot;&gt;在线字体分包器&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;h2&gt;实践（以 Hexo anzhiyu 为例）&lt;/h2&gt;
+&lt;p&gt;:::note
+准备字体 -&amp;gt; 上传到主题 -&amp;gt; 写 CSS -&amp;gt; 配置主题 -&amp;gt; 完成。
+:::&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用在线工具生成分片字体&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;将未分包的字体上传到在线字体分包器中，点击 &lt;strong&gt;点击开始字体分包&lt;/strong&gt;，等待完成后再点击 &lt;strong&gt;压缩下载 zip&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E5%AD%97%E4%BD%93%E5%88%86%E5%8C%85%E6%BC%94%E7%A4%BA.png&quot; alt=&quot;字体分包演示&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;每个文件大概几十 KB，非常轻量。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将字体上传到主题目录&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;把下载的分片文件 zip 放到 &lt;code&gt;/source/fonts/&lt;/code&gt; 中，如果没有的话就自己建一个文件夹即可。&lt;/p&gt;
+&lt;p&gt;最终目录示例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fonts/
+└── myfont/
+    ├── MyFont-basic.woff2
+    ├── MyFont-extA.woff2
+    ├── MyFont-latin.woff2
+    ├── MyFont-symbol.woff2
+    └── result.css
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;添加自定义 CSS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 &lt;code&gt;_config.anzhiyu.yml&lt;/code&gt; 中：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Inject
+# 插入代码到头部 &amp;lt;/head&amp;gt; 之前 和 底部 &amp;lt;/body&amp;gt; 之前
+inject:
+  head:
+    # 自定义css
+    - &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;/css/custom.css&quot; media=&quot;defer&quot; onload=&quot;this.media=&apos;all&apos;&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 &lt;code&gt;source/css/custom.css&lt;/code&gt; 中：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@import &apos;/fonts/myfont/result.css&apos;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;在安知鱼主题中启用字体&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 &lt;code&gt;_config.anzhiyu.yml&lt;/code&gt; 中：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;font:
+  global-font-size: 16px
+  code-font-size:
+  font-family: &quot;FZFW ZhuZi A YuanS D &amp;lt;- yourfont&quot;
+  code-font-family: MapleMono-Regular, consolas, Menlo, &quot;PingFang SC&quot;, &quot;Microsoft JhengHei&quot;, &quot;Microsoft YaHei&quot;, sans-serif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这样全站都使用你刚才分片后的字体了。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;效果展示&lt;/h2&gt;
+&lt;p&gt;可以看到分片加载的速度非常快。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E6%95%88%E6%9E%9C%E5%9B%BE.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
+</content:encoded></item><item><title>由于 CDN 下线导致的，安知鱼主题图片无法显示/加载</title><link>https://blog.ccwait.com/posts/hexo-anzhiyu-image-fix/</link><guid isPermaLink="true">https://blog.ccwait.com/posts/hexo-anzhiyu-image-fix/</guid><description>安知鱼主题图片无法显示时，如何定位失效 CDN 并替换为可用镜像。</description><pubDate>Sat, 16 Aug 2025 06:01:26 GMT</pubDate><content:encoded>&lt;h2&gt;引言&lt;/h2&gt;
+&lt;p&gt;在一次更新和调试中，我突然发现自己的博客所有图片都加载不出来，文章二维码也失效了。起初我还以为是主题配置出了错，但仔细排查后才发现，真正的原因是字节跳动公共静态资源库被下线，导致主题依赖的外部 JS 资源无法正常获取。&lt;/p&gt;
+&lt;p&gt;这篇文章记录了我定位问题的过程，以及通过替换 CDN 链接来解决故障的方法，希望能帮到遇到同样问题的朋友。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;典型症状&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;全站图片无法加载且控制台中显示多个依赖无法加载&lt;/li&gt;
+&lt;li&gt;部分功能无法使用，如文章二维码&lt;/li&gt;
+&lt;li&gt;从主页进入文章可显示图片，但在文章页面刷新后无法显示图片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222032165.png&quot; alt=&quot;症状表现&quot; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;故障原因&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://linux.do/t/topic/862052&quot;&gt;字节跳动静态资源公共库因黑产问题下线&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222151765.png&quot; alt=&quot;字节跳动静态资源公共库因黑产问题下线&quot; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;h3&gt;定位故障原因&lt;/h3&gt;
+&lt;p&gt;在故障页面按下 &amp;lt;kbd&amp;gt;F12&amp;lt;/kbd&amp;gt;，进入网络页面点击刷新查看 JS 获取情况。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222822500.png&quot; alt=&quot;定位故障示例&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;以 &lt;code&gt;qrcode.min.js&lt;/code&gt; 无法加载为例&lt;/h3&gt;
+&lt;p&gt;复制请求 URL，使用编辑器搜索定位后替换为可用的 CDN 即可，比如 VSCode。&lt;/p&gt;
+&lt;p&gt;将
+&lt;code&gt;https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;替换为
+&lt;code&gt;https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816223300108.png&quot; alt=&quot;替换示例&quot; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;可能的隐患&lt;/h2&gt;
+&lt;p&gt;在 &lt;code&gt;themes\anzhiyu\sw-rules.js&lt;/code&gt; 里还有对 &lt;code&gt;bytecdntp.com&lt;/code&gt; 的引用。&lt;/p&gt;
+</content:encoded></item><item><title>Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程</title><link>https://blog.ccwait.com/posts/linux-server-clash-tun/</link><guid isPermaLink="true">https://blog.ccwait.com/posts/linux-server-clash-tun/</guid><description>在无图形界面的 Linux 服务器上部署 Clash TUN 模式，并结合 Yacd 实现透明代理与可视化管理。</description><pubDate>Fri, 15 Aug 2025 07:19:10 GMT</pubDate><content:encoded>&lt;p&gt;:::warning
+已有更加优雅的实现，详见 &lt;a href=&quot;https://github.com/nelvko/clash-for-linux-install&quot;&gt;clash-for-linux-install&lt;/a&gt;。
+:::&lt;/p&gt;
+&lt;h2&gt;引言&lt;/h2&gt;
+&lt;p&gt;在使用 Linux 服务器的过程中，常常遇到这样的问题：在 Clash 启动后还要为各种应用或服务设置系统代理，还可能遇到一些无法设置代理的软件导致无法访问。所以我们可以通过 Clash 的 TUN 模式实现系统级透明代理，让所有应用无需单独配置代理即可直接访问外网。再配合 Yacd 可视化管理面板，我们就能更直观地管理和切换节点，大大提升使用体验。&lt;/p&gt;
+&lt;h2&gt;开始前准备&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;安装脚本依赖&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;iproute&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nftables&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Yacd 依赖&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;docker&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2&gt;安装 Clash-TUN&lt;/h2&gt;
+&lt;h3&gt;安装 &lt;a href=&quot;https://github.com/blue7wings/clash-tun&quot;&gt;clash-tun&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;克隆项目&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/blue7wings/clash-tun
+# 连不上 github 可使用反代
+# 如： git clone https://gh.llkk.cc/https://github.com/blue7wings/clash-tun
+cd clash-tun
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;配置设置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;sudo mkdir /srv/clash/
+sudo mv config.yaml Country.mmdb /srv/clash/
+sudo mv clash /usr/bin/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;安装 &lt;a href=&quot;https://downloads.clash.wiki/ClashPremium/&quot;&gt;clash-core&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;下载 Clash Core 并解压&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;# AMD64 架构为例
+wget https://downloads.clash.wiki/ClashPremium/clash-linux-amd64-2023.08.17.gz
+# 使用 gunzip 解压
+gunzip clash-linux-amd64-2023.08.17.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;安装 Clash 并设置权限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;sudo mv clash-linux-amd64-2023.08.17 /usr/bin/clash
+sudo chmod 775 /usr/bin/clash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;完成安装&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;sudo ./installer.sh install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h2&gt;安装 Yacd&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;docker run -p 1234:80 -d --name yacd ghcr.io/haishanh/yacd:master
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装后可通过 &lt;a href=&quot;http://hostip:1234&quot;&gt;http://hostip:1234&lt;/a&gt; 访问。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;修改 &lt;code&gt;config.yaml&lt;/code&gt; 以开启 TUN 和 Web 管理&lt;/h2&gt;
+&lt;h3&gt;通过 &lt;code&gt;vim&lt;/code&gt; 修改配置文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;sudo vim /srv/clash/config.yaml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;向配置文件中修改以下选项&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;# 主机修改为 0.0.0.0 以支持外部访问
+# 端口号修改为 9091 以避免与 web 管理冲突
+external-controller: &quot;0.0.0.0:9091&quot;
+# 启用 tun
+tun:
+  enable: true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;修改后的配置文件示例&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;mixed-port: 7890
+allow-lan: true
+bind-address: &quot;*&quot;
+mode: rule
+log-level: info
+external-controller: &quot;0.0.0.0:9091&quot;
+tun:
+  enable: true
+dns:
+  enable: true
+  ipv6: true
+  default-nameserver: [223.5.5.5, 119.29.29.29]
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver: [223.5.5.5, 119.29.29.29, 8.8.8.8, 1.1.1.1]
+  fallback:
+    [8.8.4.4, 1.0.0.1, &quot;https://dns.twnic.tw/dns-query&quot;, &quot;tls://8.8.4.4:853&quot;]
+  fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+proxies:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;:::tip
+修改后就能通过 Web 管理选择连接节点了。
+:::&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;最终效果&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/18-20250816183419209.png&quot; alt=&quot;clash服务&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/18-20250816183639583.png&quot; alt=&quot;yacd控制台&quot; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;服务管理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;设置开机自启（如有需要）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl enable clash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;启动 &lt;code&gt;clash&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl start clash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;查看服务状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl status clash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h2&gt;一些疑难杂症&lt;/h2&gt;
+&lt;h3&gt;Yacd 无法连接到 Clash 解决方案&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;方法一：放行 &lt;code&gt;external-controller&lt;/code&gt; 端口
+&lt;code&gt;sudo firewall-cmd --add-port=9091/tcp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;方法二：关闭防火墙&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::warning
+尽量不要关闭防火墙，这样会使你的服务器更易受到攻击。
+:::&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl stop firewalld.service&lt;/code&gt;&lt;/p&gt;
+</content:encoded></item><item><title>飞牛OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接）</title><link>https://blog.ccwait.com/posts/fnos-ssl-automatic-renewal/</link><guid isPermaLink="true">https://blog.ccwait.com/posts/fnos-ssl-automatic-renewal/</guid><description>通过 1Panel 为飞牛 OS 申请 SSL 证书，并用软连接实现自动续签。</description><pubDate>Wed, 23 Jul 2025 05:35:10 GMT</pubDate><content:encoded>&lt;h2&gt;开始前准备&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1Panel&lt;/li&gt;
+&lt;li&gt;DNS 账号（本文以 Cloudflare 为例）&lt;/li&gt;
+&lt;li&gt;有手就行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;h2&gt;创建证书推送文件夹&lt;/h2&gt;
+&lt;p&gt;在用户目录下创建一个接收证书的文件夹，1Panel 申请的证书将会推送到这里。&lt;/p&gt;
+&lt;p&gt;:::note
+建议右键文件夹后在文件夹详细信息中复制原始路径备用。
+:::&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E8%AF%81%E4%B9%A6%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84.png&quot; alt=&quot;21-证书存放路径&quot; /&gt;&lt;/p&gt;
+&lt;h2&gt;使用 1Panel 申请 SSL 证书&lt;/h2&gt;
+&lt;h3&gt;1. 进入证书页添加域名 DNS 账号&lt;/h3&gt;
+&lt;p&gt;进入证书页后点击 DNS 账户按钮添加 DNS 账户。&lt;/p&gt;
+&lt;p&gt;进入 &lt;a href=&quot;https://dash.cloudflare.com/profile/api-tokens&quot;&gt;Cloudflare Dashboard&lt;/a&gt; 获取 API 令牌，点击创建令牌创建具有编辑 DNS 权限的令牌。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%88%9B%E5%BB%BAdns%E8%B4%A6%E6%88%B7.png&quot; alt=&quot;21-创建dns账户&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E8%8E%B7%E5%8F%96API%E4%BB%A4%E7%89%8C.png&quot; alt=&quot;21-获取API令牌&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;2. 创建 Acme 账户&lt;/h3&gt;
+&lt;p&gt;填写邮箱后点击确定。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%88%9B%E5%BB%BAAcme%E8%B4%A6%E6%88%B7.png&quot; alt=&quot;21-创建Acme账户&quot; /&gt;&lt;/p&gt;
+&lt;h3&gt;3. 申请域名并设置推送文件夹证书&lt;/h3&gt;
+&lt;h4&gt;输入主域名后按需填写选项，开启自动续签，并设置证书推送目录&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6.png&quot; alt=&quot;21-申请证书&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;设置重命名脚本&lt;/h4&gt;
+&lt;p&gt;1Panel 申请的证书默认为 &lt;code&gt;fullchain.pem&lt;/code&gt; 和 &lt;code&gt;privkey.pem&lt;/code&gt;，重命名后更方便管理。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# xxx 改为你的主域名
+mv fullchain.pem xxx.crt
+mv privkey.pem xxx.key
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最后点击确认，等待几分钟即可申请到证书。&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;将证书上传到 FnOS&lt;/h2&gt;
+&lt;p&gt;将推送目录的证书下载后上传到 FnOS，中间证书可不填。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%AF%BC%E5%85%A5%E8%AF%81%E4%B9%A6.png&quot; alt=&quot;21-导入证书&quot; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;使用软链接实现证书自动续签&lt;/h2&gt;
+&lt;h3&gt;1. 进入终端（可使用 1Panel 中的终端）&lt;/h3&gt;
+&lt;p&gt;先进入飞牛 NAS 的证书存放目录，这里存放了添加到系统中的域名证书。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /usr/trim/var/trim_connect/ssls
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;继续进入需要自动续签的域名目录，如 &lt;code&gt;/usr/trim/var/trim_connect/ssls/xxx.com/1753268297/&lt;/code&gt;，这目录下存放了该域名的证书和私钥。&lt;/p&gt;
+&lt;h3&gt;2. 使用命令软链接私钥和证书&lt;/h3&gt;
+&lt;p&gt;:::warning
+需要先删除原有的证书和私钥文件。
+:::&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 删除原有证书文件
+sudo rm xxx.crt xxx.key
+
+# 添加软链接文件（如有需要请更改链接路径）
+sudo ln -s /vol1/1000/Certs/xxx.crt xxx.crt
+sudo ln -s /vol1/1000/Certs/xxx.key xxx.key
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如有需要可通过 &lt;code&gt;cat&lt;/code&gt; 命令查看是否链接成功。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cat xxx.crt
+cat xxx.key
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;h2&gt;大功告成&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h2&gt;可能遇到的问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;如遇到申请证书时出现错误，可以尝试打开 &lt;code&gt;禁用 CNAME&lt;/code&gt; 选项&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item><item><title>更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复</title><link>https://blog.ccwait.com/posts/ubuntu24-10-xorg-fix/</link><guid isPermaLink="true">https://blog.ccwait.com/posts/ubuntu24-10-xorg-fix/</guid><description>Ubuntu 24.10 更新后，Xrdp 登录 Xorg 闪退的排查与修复方法。</description><pubDate>Sun, 09 Feb 2025 07:02:50 GMT</pubDate><content:encoded>&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;Ubuntu 更新到 24.10 后，使用 &lt;code&gt;apt&lt;/code&gt; 安装 &lt;code&gt;xrdp&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install xrdp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加 &lt;code&gt;gnome-session&lt;/code&gt; 到 &lt;code&gt;~/.xsession&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &quot;gnome-session&quot; | tee ~/.xsession
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在 Windows 上使用远程桌面连接 Ubuntu 登录 Xorg 后闪退。&lt;/p&gt;
+&lt;p&gt;查看 &lt;code&gt;.xorgxrdp.10.log&lt;/code&gt; 发现客户端的版本比预期的要旧，但是更新客户端版本也不行。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[ 10160.761] rdpClientConProcessMsgClientInfo:
+[ 10160.761] expected xrdp client_info version 20230425, got 20210723
+[ 10160.761] (EE)
+Fatal server error:
+[ 10160.761] (EE) Incompatible xrdp version detected  - please recompile(EE)
+[ 10160.761] (EE)
+Please consult the The X.Org Foundation support
+         at http://wiki.x.org
+ for help.
+[ 10160.761] (EE) Please also check the log file at &quot;.xorgxrdp.10.log&quot; for additional information.
+[ 10160.761] (EE)
+[ 10160.762] rdpmouseControl: what 4
+[ 10160.762] rdpkeybControl: what 4
+[ 10160.762] (II) AIGLX: Suspending AIGLX clients for VT switch
+[ 10160.762] rdpLeaveVT:
+[ 10160.764] (EE) Server terminated with error (1). Closing log file.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其实这是 Ubuntu Oracular 源 Xrdp 的一个 Bug。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/xrdp/+bug/2085347&quot;&gt;在 Oracular 中，Xrdp 和 xorgxrdp 被编译为不同的版本&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;解决方法&lt;/h2&gt;
+&lt;h3&gt;方法一、使用旧版的 xorgxrdp 包&lt;/h3&gt;
+&lt;h4&gt;1. 下载旧版 xorgxrdp 包&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;wget http://launchpadlibrarian.net/640882094/xorgxrdp_0.9.19-1_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;2. 使用 dpkg 安装&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo dpkg -i xorgxrdp_0.9.19-1_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;3. 重启 xrdp 服务&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo systemctl restart xrdp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;4. 禁止 xorgxrdp 自动更新&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-mark hold xorgxrdp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;方法二、修改 apt 更新源并更新 Xorgxrdp&lt;/h3&gt;
+&lt;p&gt;:::warning
+此方法我尝试了也没成功，有效性待定。
+:::&lt;/p&gt;
+&lt;h4&gt;1. 编辑 &lt;code&gt;/etc/apt/sources.list.d/ubuntu.sources&lt;/code&gt;，在 &lt;code&gt;oracular-backports&lt;/code&gt; 后面添加 &lt;code&gt;oracular-proposed&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/20250209222138586.png&quot; alt=&quot;编辑示例&quot; /&gt;&lt;/p&gt;
+&lt;h4&gt;2. &lt;code&gt;sudo apt update&lt;/code&gt; 更新软件源&lt;/h4&gt;
+&lt;h4&gt;3. &lt;code&gt;sudo install xrdp/oracular-proposed&lt;/code&gt;，使用指定软件源更新 &lt;code&gt;xrdp&lt;/code&gt;&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;h2&gt;使用远程桌面连接测试&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/xorgxrdp%E4%BF%AE%E5%A4%8D%E5%90%8E%E8%BF%9E%E6%8E%A5%E6%A1%8C%E9%9D%A2.png&quot; alt=&quot;连接修复成功&quot; /&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://askubuntu.com/questions/1530296/remote-desktop-connections-from-windows-to-stopped-working-after-upgrading-to-ub&quot;&gt;xorg - Remote desktop connections from Windows to stopped working after upgrading to Ubuntu 24.10 - Ask Ubuntu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content:encoded></item></channel></rss>

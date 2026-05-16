@@ -1,648 +1,305 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>Ctanhuawu の Blog - 无限进步</title><meta name="author" content="Ctanhuawu"><meta name="copyright" content="Ctanhuawu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="Ctanhuawu の Blog"><meta name="application-name" content="Ctanhuawu の Blog"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="website"><meta property="og:title" content="Ctanhuawu の Blog"><meta property="og:url" content="http://blog.041218.xyz/index.html"><meta property="og:site_name" content="Ctanhuawu の Blog"><meta property="og:description" content="相信你可以在这里找到对你有用的知识和教程"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://api.041218.xyz/pic/Blog/avatar.jpg"><meta property="article:author" content="Ctanhuawu"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://api.041218.xyz/pic/Blog/avatar.jpg"><meta name="description" content="相信你可以在这里找到对你有用的知识和教程"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://blog.041218.xyz/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="MlpMKiB603BtlBbez_o8my8dhw-84bXU4C4hWGNc5I"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
-  linkPageTop: undefined,
-  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
-  postHeadAiDescription: {"enable":true,"gptName":"MOSS","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
-  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
-  LA51: undefined,
-  greetingBox: {"enable":true,"default":"こんにちは~👋","list":[{"greeting":"晚安😴","startTime":0,"endTime":5},{"greeting":"早上好鸭👋, 祝你一天好心情！","startTime":6,"endTime":9},{"greeting":"上午好👋, 状态很好，鼓励一下～","startTime":10,"endTime":10},{"greeting":"11点多啦, 在坚持一下就吃饭啦～","startTime":11,"endTime":11},{"greeting":"午安👋, 宝贝","startTime":12,"endTime":14},{"greeting":"🌈充实的一天辛苦啦！","startTime":14,"endTime":18},{"greeting":"19点喽, 奖励一顿丰盛的大餐吧🍔。","startTime":19,"endTime":19},{"greeting":"晚上好👋, 在属于自己的时间好好放松😌~","startTime":20,"endTime":24}]},
-  twikooEnvId: 'https://twikoo-ctanhuawu.netlify.app/.netlify/functions/twikoo',
-  commentBarrageConfig:undefined,
-  music_page_default: "nav_music",
-  root: '/',
-  preloader: {"source":2},
-  friends_vue_info: undefined,
-  navMusic: false,
-  mainTone: {"mode":"api","api":"https://api.041218.xyz/img2color?img=","cover_change":true},
-  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
-  algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
-  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    simplehomepage: true,
-    post: false
-  },
-  runtime: '天',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: Ctanhuawu","link":"链接: ","source":"来源: Ctanhuawu の Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
-      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+<!DOCTYPE html><html lang="zh-CN" class="bg-[var(--page-bg)] transition text-[14px] md:text-[16px]" data-overlayscrollbars-initialize data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 250;--page-width: 75rem;"> <head><title>Ctanhuawu の Blog - 无限进步</title><meta charset="UTF-8"><meta name="description" content="Ctanhuawu の Blog - 无限进步"><meta name="author" content="Ctanhuawu"><meta property="og:site_name" content="Ctanhuawu の Blog"><meta property="og:url" content="https://blog.ccwait.com/"><meta property="og:title" content="Ctanhuawu の Blog - 无限进步"><meta property="og:description" content="Ctanhuawu の Blog - 无限进步"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://blog.ccwait.com/"><meta name="twitter:title" content="Ctanhuawu の Blog - 无限进步"><meta name="twitter:description" content="Ctanhuawu の Blog - 无限进步"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.13.10"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/fonts/Zhuzi-fontchw4/result.css"><!-- Set the theme before the page is rendered to avoid a flash --><script>(function(){const DEFAULT_THEME = "auto";
+const LIGHT_MODE = "light";
+const DARK_MODE = "dark";
+const AUTO_MODE = "auto";
+const BANNER_HEIGHT_EXTEND = 30;
+const PAGE_WIDTH = 75;
+const configHue = 250;
+
+			// Load the theme from local storage
+			const theme = localStorage.getItem('theme') || DEFAULT_THEME;
+			switch (theme) {
+				case LIGHT_MODE:
+					document.documentElement.classList.remove('dark');
+					break
+				case DARK_MODE:
+					document.documentElement.classList.add('dark');
+					break
+				case AUTO_MODE:
+					if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+						document.documentElement.classList.add('dark');
+					} else {
+						document.documentElement.classList.remove('dark');
+					}
+			}
+
+			// Load the hue from local storage
+			const hue = localStorage.getItem('hue') || configHue;
+			document.documentElement.style.setProperty('--hue', hue);
+
+			// calculate the --banner-height-extend, which needs to be a multiple of 4 to avoid blurry text
+			let offset = Math.floor(window.innerHeight * (BANNER_HEIGHT_EXTEND / 100));
+			offset = offset - offset % 4;
+			document.documentElement.style.setProperty('--banner-height-extend', `${offset}px`);
+		})();</script><!-- defines global css variables. This will be applied to <html> <body> and some other elements idk why --><link rel="alternate" type="application/rss+xml" title="Ctanhuawu" href="https://blog.ccwait.com/rss.xml"><link rel="stylesheet" href="/_astro/Layout.DSulWsr7.css">
+<link rel="stylesheet" href="/_astro/Layout.y4KPJ9hc.css">
+<link rel="stylesheet" href="/_astro/_page_.BiGEbMC7.css">
+<link rel="stylesheet" href="/_astro/_page_.ChT2VxZZ.css">
+<link rel="stylesheet" href="/_astro/about.BtniRLn_.css">
+<style>input.svelte-1wah7ro:focus{outline:0}.search-panel.svelte-1wah7ro{max-height:calc(100vh - 100px);overflow-y:auto}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k){-webkit-appearance:none;height:1.5rem;background-image:var(--color-selection-bar);transition:background-image .15s ease-in-out}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-webkit-slider-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;background:#ffffffb3;box-shadow:none}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-webkit-slider-thumb:hover{background:#fffc}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-webkit-slider-thumb:active{background:#fff9}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-moz-range-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;border-width:0;background:#ffffffb3;box-shadow:none}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-moz-range-thumb:hover{background:#fffc}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-moz-range-thumb:active{background:#fff9}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-ms-thumb{-webkit-appearance:none;height:1rem;width:.5rem;border-radius:.125rem;background:#ffffffb3;box-shadow:none}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-ms-thumb:hover{background:#fffc}#display-setting.svelte-d7tq3k input[type=range]:where(.svelte-d7tq3k)::-ms-thumb:active{background:#fff9}
+</style><script type="module" src="/_astro/page.Z8IJTFqj.js"></script></head> <body class=" min-h-screen transition  lg:is-home enable-banner" data-overlayscrollbars-initialize data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 250;--page-width: 75rem;"> <div id="config-carrier" data-hue="250"></div>    <div id="top-row" class="z-50 pointer-events-none relative transition-all duration-700 max-w-[var(--page-width)] px-0 md:px-4 mx-auto"> <div id="navbar-wrapper" class="pointer-events-auto sticky top-0 transition-all"> <div id="navbar" class="z-50 onload-animation"> <div class="absolute h-8 left-0 right-0 -top-8 bg-[var(--card-bg)] transition"></div> <!-- used for onload animation --> <div class="card-base !overflow-visible max-w-[var(--page-width)] h-[4.5rem] !rounded-t-none mx-auto flex items-center justify-between px-4"> <a href="/" class="btn-plain scale-animation rounded-lg h-[3.25rem] px-5 font-bold active:scale-95"> <div class="flex flex-row text-[var(--primary)] items-center text-md"> <svg width="1em" height="1em" class="text-[1.75rem] mb-1 mr-2" data-icon="material-symbols:home-outline-rounded">   <symbol id="ai:material-symbols:home-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75"/></symbol><use href="#ai:material-symbols:home-outline-rounded"></use>  </svg> Ctanhuawu の Blog </div> </a> <div class="hidden md:flex"> <a aria-label="主页" href="/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 主页  </div> </a><a aria-label="归档" href="/archive/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 归档  </div> </a><a aria-label="关于" href="/about/" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 关于  </div> </a><div class="relative group flex items-center"> <button aria-label="监测" class="btn-plain scale-animation rounded-lg h-11 font-bold px-5 active:scale-95"> <div class="flex items-center"> 监测 <svg width="1em" height="1em" class="text-[1rem] transition ml-1 text-black/[0.35] dark:text-white/[0.35] group-hover:translate-y-[1px]" data-icon="material-symbols:keyboard-arrow-down-rounded">   <symbol id="ai:material-symbols:keyboard-arrow-down-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062"/></symbol><use href="#ai:material-symbols:keyboard-arrow-down-rounded"></use>  </svg> </div> </button> <div class="absolute left-1/2 top-full z-50 hidden min-w-40 -translate-x-1/2 pt-2 group-hover:block group-focus-within:block"> <div class="card-base p-2"> <a aria-label="站点统计" href="https://api.041218.xyz/server/umami/share/x5U48huDhshtBRaZ/blog.ccwait.com" target="_blank" class="group flex items-center justify-between gap-6 rounded-lg px-3 py-2 font-bold text-black/75 transition hover:bg-[var(--btn-plain-bg-hover)] hover:text-[var(--primary)] active:bg-[var(--btn-plain-bg-active)] dark:text-white/75"> <div>站点统计</div> <svg width="1em" height="1em" class="text-[0.75rem] text-black/[0.25] dark:text-white/[0.25]" data-icon="fa6-solid:arrow-up-right-from-square">   <symbol id="ai:fa6-solid:arrow-up-right-from-square" viewBox="0 0 512 512"><path fill="currentColor" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32z"/></symbol><use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </a><a aria-label="服务监测" href="https://os-status.041218.xyz/status/guest" target="_blank" class="group flex items-center justify-between gap-6 rounded-lg px-3 py-2 font-bold text-black/75 transition hover:bg-[var(--btn-plain-bg-hover)] hover:text-[var(--primary)] active:bg-[var(--btn-plain-bg-active)] dark:text-white/75"> <div>服务监测</div> <svg width="1em" height="1em" viewBox="0 0 512 512" class="text-[0.75rem] text-black/[0.25] dark:text-white/[0.25]" data-icon="fa6-solid:arrow-up-right-from-square">   <use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </a> </div> </div> </div> </div> <div class="flex"> <!--<SearchPanel client:load>--> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZQk4Sn" component-url="/_astro/Search.CcTO9did.js" component-export="default" renderer-url="/_astro/client.svelte.DP5YqolW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;Search&quot;,&quot;value&quot;:&quot;svelte&quot;}"></astro-island> <button aria-label="Display Settings" class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" id="display-settings-switch"> <svg width="1em" height="1em" class="text-[1.25rem]" data-icon="material-symbols:palette-outline">   <symbol id="ai:material-symbols:palette-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22q-2.05 0-3.875-.788t-3.187-2.15t-2.15-3.187T2 12q0-2.075.813-3.9t2.2-3.175T8.25 2.788T12.2 2q2 0 3.775.688t3.113 1.9t2.125 2.875T22 11.05q0 2.875-1.75 4.413T16 17h-1.85q-.225 0-.312.125t-.088.275q0 .3.375.863t.375 1.287q0 1.25-.687 1.85T12 22m-5.5-9q.65 0 1.075-.425T8 11.5t-.425-1.075T6.5 10t-1.075.425T5 11.5t.425 1.075T6.5 13m3-4q.65 0 1.075-.425T11 7.5t-.425-1.075T9.5 6t-1.075.425T8 7.5t.425 1.075T9.5 9m5 0q.65 0 1.075-.425T16 7.5t-.425-1.075T14.5 6t-1.075.425T13 7.5t.425 1.075T14.5 9m3 4q.65 0 1.075-.425T19 11.5t-.425-1.075T17.5 10t-1.075.425T16 11.5t.425 1.075T17.5 13M12 20q.225 0 .363-.125t.137-.325q0-.35-.375-.825T11.75 17.3q0-1.05.725-1.675T14.25 15H16q1.65 0 2.825-.962T20 11.05q0-3.025-2.312-5.038T12.2 4Q8.8 4 6.4 6.325T4 12q0 3.325 2.338 5.663T12 20"/></symbol><use href="#ai:material-symbols:palette-outline"></use>  </svg> </button> <div class="relative z-50" role="menu" tabindex="-1" id="light-dark-root"> <button aria-label="Light/Dark Mode" role="menuitem" class="relative btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" id="scheme-switch"> <div class="absolute" data-theme-icon="light"> <svg width="1em" height="1em" class="text-[1.25rem]" data-icon="material-symbols:wb-sunny-outline-rounded">   <symbol id="ai:material-symbols:wb-sunny-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M11 3V2q0-.425.288-.712T12 1t.713.288T13 2v1q0 .425-.288.713T12 4t-.712-.288T11 3m0 19v-1q0-.425.288-.712T12 20t.713.288T13 21v1q0 .425-.288.713T12 23t-.712-.288T11 22m11-9h-1q-.425 0-.712-.288T20 12t.288-.712T21 11h1q.425 0 .713.288T23 12t-.288.713T22 13M3 13H2q-.425 0-.712-.288T1 12t.288-.712T2 11h1q.425 0 .713.288T4 12t-.288.713T3 13m16.75-7.325l-.35.35q-.275.275-.687.275T18 6q-.275-.275-.288-.687t.263-.713l.375-.375q.275-.3.7-.3t.725.3t.288.725t-.313.725M6.025 19.4l-.375.375q-.275.3-.7.3t-.725-.3t-.288-.725t.313-.725l.35-.35q.275-.275.688-.275T6 18q.275.275.288.688t-.263.712m12.3.35l-.35-.35q-.275-.275-.275-.687T18 18q.275-.275.688-.287t.712.262l.375.375q.3.275.3.7t-.3.725t-.725.288t-.725-.313M4.6 6.025l-.375-.375q-.3-.275-.3-.7t.3-.725t.725-.288t.725.313l.35.35q.275.275.275.688T6 6q-.275.275-.687.288T4.6 6.025M12 18q-2.5 0-4.25-1.75T6 12t1.75-4.25T12 6t4.25 1.75T18 12t-1.75 4.25T12 18m0-2q1.675 0 2.838-1.162T16 12t-1.162-2.838T12 8T9.162 9.163T8 12t1.163 2.838T12 16m0-4"/></symbol><use href="#ai:material-symbols:wb-sunny-outline-rounded"></use>  </svg> </div> <div class="absolute opacity-0" data-theme-icon="dark"> <svg width="1em" height="1em" class="text-[1.25rem]" data-icon="material-symbols:dark-mode-outline-rounded">   <symbol id="ai:material-symbols:dark-mode-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21q-3.775 0-6.387-2.613T3 12q0-3.45 2.25-5.988T11 3.05q.325-.05.575.088t.4.362t.163.525t-.188.575q-.425.65-.638 1.375T11.1 7.5q0 2.25 1.575 3.825T16.5 12.9q.775 0 1.538-.225t1.362-.625q.275-.175.563-.162t.512.137q.25.125.388.375t.087.6q-.35 3.45-2.937 5.725T12 21m0-2q2.2 0 3.95-1.213t2.55-3.162q-.5.125-1 .2t-1 .075q-3.075 0-5.238-2.163T9.1 7.5q0-.5.075-1t.2-1q-1.95.8-3.163 2.55T5 12q0 2.9 2.05 4.95T12 19m-.25-6.75"/></symbol><use href="#ai:material-symbols:dark-mode-outline-rounded"></use>  </svg> </div> <div class="absolute opacity-0" data-theme-icon="auto"> <svg width="1em" height="1em" class="text-[1.25rem]" data-icon="material-symbols:radio-button-partial-outline">   <symbol id="ai:material-symbols:radio-button-partial-outline" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17V7Q9.925 7 8.463 8.463T7 12t1.463 3.538T12 17m0 5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"/></symbol><use href="#ai:material-symbols:radio-button-partial-outline"></use>  </svg> </div> </button> <div id="light-dark-panel" class="hidden lg:block absolute transition float-panel-closed top-11 -right-2 pt-5"> <div class="card-base float-panel p-2"> <button class="flex transition whitespace-nowrap items-center !justify-start w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5" data-theme-mode="light"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[1.25rem] mr-3" data-icon="material-symbols:wb-sunny-outline-rounded">   <use href="#ai:material-symbols:wb-sunny-outline-rounded"></use>  </svg> 亮色 </button> <button class="flex transition whitespace-nowrap items-center !justify-start w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95 mb-0.5" data-theme-mode="dark"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[1.25rem] mr-3" data-icon="material-symbols:dark-mode-outline-rounded">   <use href="#ai:material-symbols:dark-mode-outline-rounded"></use>  </svg> 暗色 </button> <button class="flex transition whitespace-nowrap items-center !justify-start w-full btn-plain scale-animation rounded-lg h-9 px-3 font-medium active:scale-95" data-theme-mode="auto"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[1.25rem] mr-3" data-icon="material-symbols:radio-button-partial-outline">   <use href="#ai:material-symbols:radio-button-partial-outline"></use>  </svg> 跟随系统 </button> </div> </div> </div> <script>
+	const root = document.getElementById("light-dark-root");
+
+	if (root) {
+		const switchBtn = root.querySelector("#scheme-switch");
+		const panel = root.querySelector("#light-dark-panel");
+		const modeButtons = Array.from(root.querySelectorAll("[data-theme-mode]"));
+		const icons = Array.from(root.querySelectorAll("[data-theme-icon]"));
+		const seq = ["light", "dark", "auto"];
+
+		const applyTheme = (mode) => {
+			const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			const effectiveDark = mode === "dark" || (mode === "auto" && prefersDark);
+			document.documentElement.classList.toggle("dark", effectiveDark);
+		};
+
+		const setMode = (mode) => {
+			localStorage.theme = mode;
+			applyTheme(mode);
+			for (const icon of icons) {
+				icon.classList.toggle("opacity-0", icon.dataset.themeIcon !== mode);
+			}
+			for (const button of modeButtons) {
+				button.classList.toggle("current-theme-btn", button.dataset.themeMode === mode);
+			}
+		};
+
+		const getMode = () => {
+			const mode = localStorage.theme;
+			if (mode === "light" || mode === "dark" || mode === "auto") {
+				return mode;
+			}
+			return "auto";
+		};
+
+		const toggleMode = () => {
+			const current = getMode();
+			const next = seq[(seq.indexOf(current) + 1) % seq.length];
+			setMode(next);
+		};
+
+		switchBtn?.addEventListener("click", toggleMode);
+		switchBtn?.addEventListener("mouseenter", () => panel?.classList.remove("float-panel-closed"));
+		root.addEventListener("mouseleave", () => panel?.classList.add("float-panel-closed"));
+
+		for (const button of modeButtons) {
+			button.addEventListener("click", () => {
+				const mode = button.dataset.themeMode;
+				if (mode) {
+					setMode(mode);
+				}
+			});
+		}
+
+		window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+			if (getMode() === "auto") {
+				applyTheme("auto");
+			}
+		});
+
+		setMode(getMode());
+	}
+</script> <button aria-label="Menu" name="Nav Menu" class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90 md:!hidden" id="nav-menu-switch"> <svg width="1em" height="1em" class="text-[1.25rem]" data-icon="material-symbols:menu-rounded">   <symbol id="ai:material-symbols:menu-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"/></symbol><use href="#ai:material-symbols:menu-rounded"></use>  </svg> </button> </div> <div id="nav-menu-panel" class="float-panel float-panel-closed absolute transition-all fixed right-4 px-2 py-2"> <a href="/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+                hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+            "> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 主页 </div> <svg width="1em" height="1em" class="transition text-[1.25rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <symbol id="ai:material-symbols:chevron-right-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"/></symbol><use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg>  </a><a href="/archive/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+                hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+            "> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 归档 </div> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition text-[1.25rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg>  </a><a href="/about/" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+                hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+            "> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 关于 </div> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition text-[1.25rem] text-[var(--primary)]" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg>  </a><div class="py-1"> <div class="px-3 py-2 font-bold text-black/50 dark:text-white/50"> 监测 </div> <div class="pl-2"> <a href="https://api.041218.xyz/server/umami/share/x5U48huDhshtBRaZ/blog.ccwait.com" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+                            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+                        " target="_blank"> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 站点统计 </div> <svg width="1em" height="1em" viewBox="0 0 512 512" class="transition text-[0.75rem] text-black/25 dark:text-white/25 -translate-x-1" data-icon="fa6-solid:arrow-up-right-from-square">   <use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </a><a href="https://os-status.041218.xyz/status/guest" class="group flex justify-between items-center py-2 pl-3 pr-1 rounded-lg gap-8
+                            hover:bg-[var(--btn-plain-bg-hover)] active:bg-[var(--btn-plain-bg-active)] transition
+                        " target="_blank"> <div class="transition text-black/75 dark:text-white/75 font-bold group-hover:text-[var(--primary)] group-active:text-[var(--primary)]"> 服务监测 </div> <svg width="1em" height="1em" viewBox="0 0 512 512" class="transition text-[0.75rem] text-black/25 dark:text-white/25 -translate-x-1" data-icon="fa6-solid:arrow-up-right-from-square">   <use href="#ai:fa6-solid:arrow-up-right-from-square"></use>  </svg> </a> </div> </div> </div> <astro-island uid="1xOUmP" component-url="/_astro/DisplaySettings.D1UL8Ukd.js" component-export="default" renderer-url="/_astro/client.svelte.DP5YqolW.js" props="{}" ssr client="only" opts="{&quot;name&quot;:&quot;DisplaySettings&quot;,&quot;value&quot;:&quot;svelte&quot;}"></astro-island> </div> </div> <script type="module">function c(){localStorage.theme==="dark"?(document.documentElement.classList.remove("dark"),localStorage.theme="light"):(document.documentElement.classList.add("dark"),localStorage.theme="dark")}function o(){let t=document.getElementById("scheme-switch");t&&(t.onclick=function(){c()});let n=document.getElementById("display-settings-switch");n&&(n.onclick=function(){let e=document.getElementById("display-setting");e&&e.classList.toggle("float-panel-closed")});let l=document.getElementById("nav-menu-switch");l&&(l.onclick=function(){let e=document.getElementById("nav-menu-panel");e&&e.classList.toggle("float-panel-closed")})}o();</script> <script>(function(){const scriptUrl = "/pagefind/pagefind.js";
+
+async function loadPagefind() {
+    try {
+        const response = await fetch(scriptUrl, { method: 'HEAD' });
+        if (!response.ok) {
+            throw new Error(`Pagefind script not found: ${response.status}`);
+        }
+
+        const pagefind = await import(scriptUrl);
+
+        await pagefind.options({
+            excerptLength: 20
+        });
+
+        window.pagefind = pagefind;
+
+        document.dispatchEvent(new CustomEvent('pagefindready'));
+        console.log('Pagefind loaded and initialized successfully, event dispatched.');
+    } catch (error) {
+        console.error('Failed to load Pagefind:', error);
+        window.pagefind = {
+            search: () => Promise.resolve({ results: [] }),
+            options: () => Promise.resolve(),
+        };
+        document.dispatchEvent(new CustomEvent('pagefindloaderror'));
+        console.log('Pagefind load error, event dispatched.');
     }
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isAnchor: false,
-  shortcutKey: undefined,
-  autoDarkmode: true
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  configTitle: 'Ctanhuawu の Blog',
-  title: 'Ctanhuawu の Blog',
-  postAI: '',
-  pageFillDescription: '相信你可以在这里找到对你有用的知识和教程',
-  isPost: false,
-  isHome: true,
-  isHighlightShrink: false,
-  isToc: false,
-  postUpdate: '2025-12-02 16:33:40',
-  postMainColor: '',
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
-
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
-
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
-            }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
-              }
-            })
-          } else if (t === 'light') activateLightMode()
-          else activateDarkMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script defer src="https://api.041218.xyz/collect/umm-script.js" data-website-id="88e31108-7381-4727-8fee-40b8055c3a5d"></script><style type="text/css">
-.spoiler {
-  display: inline;
-}
-p.spoiler {
-  display: flex;
-}
-.spoiler a {
-  pointer-events: none;
-}
-.spoiler-blur, .spoiler-blur > * {
-  transition: text-shadow .5s ease;
-}
-.spoiler .spoiler-blur, .spoiler .spoiler-blur > * {
-  color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
-  text-shadow: 0 0 10px grey;
-  cursor: pointer;
-}
-.spoiler .spoiler-blur:hover, .spoiler .spoiler-blur:hover > * {
-  text-shadow: 0 0 5px grey;
-}
-.spoiler-box, .spoiler-box > * {
-  transition: color .5s ease,
-  background-color .5s ease;
-}
-.spoiler .spoiler-box, .spoiler .spoiler-box > * {
-  color: black;
-  background-color: black;
-  text-shadow: none;
-}</style><meta name="generator" content="Hexo 8.1.1"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><script>function initMourn() {
-    const date = new Date();
-    const today = (date.getMonth() + 1) + "-" + date.getDate()
-    const mourn_days = ["4-5","5-12","7-7","9-18","12-13"]
-    if (mourn_days.includes(today)) {
-        document.documentElement.style.filter = "grayscale(1)";
-    }}
-initMourn();</script><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Ctanhuawu の Blog</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)" rel="external nofollow noreferrer">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 备链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="https://blog.041218.xyz"><i class="anzhiyufont anzhiyu-icon-house-chimney faa-tada" style="font-size: 0.9em;"></i><span> 主站</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo-blog-one-pi.vercel.app/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> Vercel</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener external nofollow noreferrer" href="https://ctanhuawu-blog.web.app/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> FireBase</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 监测</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener external nofollow noreferrer" href="https://api.041218.xyz/server/umami/share/x5U48huDhshtBRaZ/blog.ccwait.com"><i class="anzhiyufont anzhiyu-icon-chart-line faa-tada" style="font-size: 0.9em;"></i><span> 站点统计</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener external nofollow noreferrer" href="https://os-status.041218.xyz/status/guest"><i class="anzhiyufont anzhiyu-icon-heartbeat faa-tada" style="font-size: 0.9em;"></i><span> 服务监测</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" alt="微信" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" alt="支付宝" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Blog/" style="font-size: 1.05rem;">Blog<sup>2</sup></a><a href="/tags/CDN/" style="font-size: 1.05rem;">CDN<sup>1</sup></a><a href="/tags/Clash/" style="font-size: 1.05rem;">Clash<sup>1</sup></a><a href="/tags/Docker/" style="font-size: 1.05rem;">Docker<sup>1</sup></a><a href="/tags/Fedora/" style="font-size: 1.05rem;">Fedora<sup>1</sup></a><a href="/tags/Fix/" style="font-size: 1.05rem;">Fix<sup>1</sup></a><a href="/tags/FnOS/" style="font-size: 1.05rem;">FnOS<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.05rem;">Hexo<sup>2</sup></a><a href="/tags/Https/" style="font-size: 1.05rem;">Https<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>1</sup></a><a href="/tags/NoGUI/" style="font-size: 1.05rem;">NoGUI<sup>1</sup></a><a href="/tags/SSL/" style="font-size: 1.05rem;">SSL<sup>1</sup></a><a href="/tags/Server/" style="font-size: 1.05rem;">Server<sup>1</sup></a><a href="/tags/TUN/" style="font-size: 1.05rem;">TUN<sup>1</sup></a><a href="/tags/Ubuntu/" style="font-size: 1.05rem;">Ubuntu<sup>1</sup></a><a href="/tags/Xorgxrdp/" style="font-size: 1.05rem;">Xorgxrdp<sup>1</sup></a><a href="/tags/Xrdp/" style="font-size: 1.05rem;">Xrdp<sup>1</sup></a><a href="/tags/Yacd/" style="font-size: 1.05rem;">Yacd<sup>1</sup></a><a href="/tags/anzhiyu/" style="font-size: 1.05rem;">anzhiyu<sup>1</sup></a><a href="/tags/font/" style="font-size: 1.05rem;">font<sup>1</sup></a><a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 1.05rem;">优化<sup>1</sup></a><a href="/tags/%E5%AD%97%E4%BD%93/" style="font-size: 1.05rem;">字体<sup>1</sup></a><a href="/tags/%E5%AE%89%E7%9F%A5%E9%B1%BC/" style="font-size: 1.05rem;">安知鱼<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/12/"><span class="card-archive-list-date">十二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">八月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);" rel="external nofollow noreferrer"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav></header><main id="blog-container"><div class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div id="categoryBar"><div class="category-bar" id="category-bar"><div id="catalog-bar"><div id="catalog-list"><div class="catalog-list-item" id="首页"><a href="/">首页</a></div>
-    <div class="catalog-list-item" id="/categories/Hexo/">
-      <a href="/categories/Hexo/">
-        Hexo
-      </a>
-    </div>
-    
-    <div class="catalog-list-item" id="/categories/Linux/">
-      <a href="/categories/Linux/">
-        Linux
-      </a>
-    </div>
-    
-    <div class="catalog-list-item" id="/categories/FnOS/">
-      <a href="/categories/FnOS/">
-        FnOS
-      </a>
-    </div>
-    </div><div class="category-bar-next" id="category-bar-next" onclick="anzhiyu.scrollCategoryBarToRight()"><i class="anzhiyufont anzhiyu-icon-angle-double-right"></i></div><a class="catalog-more" href="/categories/">更多</a></div></div></div><div class="recent-post-item lastestpost-item" onclick="pjax.loadUrl('/post/29914.html')"><div class="post_cover left"><a href="/post/29914.html" title="Hexo 字体分片加载实践" style="display: flex;height: 100%;"><img class="post_bg" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/PixPin_2025-12-02_15-56-54.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo 字体分片加载实践" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><span class="newPost">最新</span><a class="unvisited-post" href="/post/29914.html" title="Hexo 字体分片加载实践">未读</a></div><a class="article-title" href="/post/29914.html" title="Hexo 字体分片加载实践">Hexo 字体分片加载实践</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-12-02T07:30:26.000Z" title="发表于 2025-12-02 15:30:26" time="2025-12-02 15:30:26">2025-12-02</time><time class="time_hidden" datetime="2025-12-02T08:33:18.345Z" title="更新于 2025-12-02 16:33:18" time="2025-12-02 16:33:18">2025-12-02</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Hexo/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Hexo</span></a><a class="article-meta__tags" href="/tags/%E5%AE%89%E7%9F%A5%E9%B1%BC/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>安知鱼</span></a><a class="article-meta__tags" href="/tags/Blog/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Blog</span></a><a class="article-meta__tags" href="/tags/%E5%AD%97%E4%BD%93/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>字体</span></a><a class="article-meta__tags" href="/tags/font/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>font</span></a><a class="article-meta__tags" href="/tags/%E4%BC%98%E5%8C%96/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>优化</span></a></span></div><div class="content">前言
-知周所众，中文字体的体积实在夸张，动不动就十几 MB。再加上白嫖 CDN 的带宽本来就小，页面一加载就慢得让人头疼，首屏甚至能卡到怀疑人生。可同时，大家又都希望通过自定义字体给博客加点个性，让站点看起来更有味道。于是问题就出现了：既想保持风格，又不想让网站加载速度变成 PPT，这就必须想办法把字体优化一下。
-
-技术原理
-既然中文字体大得夸张，要优化加载速度，最核心的一步就是：把大块的 TTF 切成小巧的 WOFF2 分片。手动切肯定是不现实的，所以我们一般会借助现成的字体分片工具，它们能自动分析你需要的字符，然后生成只保留必要字形的字体文件。
-常见做法就是用工具把字体拆成几个片段，比如常用汉字、扩展汉字、英文 / 数字、标点符号等等。这样浏览器遇到中文就加载中文那片，需要英文就加载英文那片，实现真正的 “按需加载”。
-比如使用一些在线子集化工具。核心目的都是一样的：减少字体内容，让每个片段越小越好，然后在 CSS 里用 unicode-range 让浏览器自动选择它该加载哪一片。
-最终效果就是：原本十几 MB 的字体，可能被拆成几个几十 KB 的小文件；加载速度提升明显，博客的个 ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/51626.html')"><div class="post_cover left"><a href="/post/51626.html" title="由于 CDN 下线导致的，安知鱼主题图片无法显示 / 加载" style="display: flex;height: 100%;"><img class="post_bg" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://api.041218.xyz/pic/Blog/2025/08/16/131503271_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="由于 CDN 下线导致的，安知鱼主题图片无法显示 / 加载" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">Hexo</div><a class="unvisited-post" href="/post/51626.html" title="由于 CDN 下线导致的，安知鱼主题图片无法显示 / 加载">未读</a></div><a class="article-title" href="/post/51626.html" title="由于 CDN 下线导致的，安知鱼主题图片无法显示 / 加载">由于 CDN 下线导致的，安知鱼主题图片无法显示 / 加载</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-08-16T06:01:26.000Z" title="发表于 2025-08-16 14:01:26" time="2025-08-16 14:01:26">2025-08-16</time><time class="time_hidden" datetime="2025-08-16T15:35:10.321Z" title="更新于 2025-08-16 23:35:10" time="2025-08-16 23:35:10">2025-08-16</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Hexo/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Hexo</span></a><a class="article-meta__tags" href="/tags/%E5%AE%89%E7%9F%A5%E9%B1%BC/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>安知鱼</span></a><a class="article-meta__tags" href="/tags/anzhiyu/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>anzhiyu</span></a><a class="article-meta__tags" href="/tags/Fix/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Fix</span></a><a class="article-meta__tags" href="/tags/Blog/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Blog</span></a><a class="article-meta__tags" href="/tags/CDN/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>CDN</span></a></span></div><div class="content">引言
-在一次更新和调试中，我突然发现自己的博客所有图片都加载不出来，文章二维码也失效了。起初我还以为是主题配置出了错，但仔细排查后才发现，真正的原因是 字节跳动公共静态资源库被下线，导致主题依赖的外部 JS 资源无法正常获取。
-这篇文章记录了我定位问题的过程，以及通过 替换 CDN 链接 来解决故障的方法，希望能帮到遇到同样问题的朋友。
-
-典型症状
-
-全站图片无法加载且控制台中显示多个依赖无法加载
-部分功能无法使用（如文章 QRCode）
-从主页进入文章可显示图片，但在文章页面刷新后无法显示图片
-
-
-
-故障原因
-
-    引用站外地址
-    
-        
-          
-        
-        
-            字节跳动静态资源公共库因黑产问题下线
-            tls801
-        
-        
-    
-    
-
-
-解决方法
-定位故障原因
-在故障页面按下 f12，进入网络页面点击刷新查看 Js 获取情况
-
-以 qrcode.min.js 无法加载为例
-复制请求 URL 使用编辑器搜索定位替换为可用的 cdn 即可（如 VSC ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/14968.html')"><div class="post_cover left"><a href="/post/14968.html" title="Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程" style="display: flex;height: 100%;"><img class="post_bg" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://api.041218.xyz/pic/Blog/2025/08/15/23-Clash%20%E8%83%8C%E6%99%AF.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">Linux</div><a class="unvisited-post" href="/post/14968.html" title="Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程">未读</a></div><a class="article-title" href="/post/14968.html" title="Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程">Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-08-15T07:19:10.000Z" title="发表于 2025-08-15 15:19:10" time="2025-08-15 15:19:10">2025-08-15</time><time class="time_hidden" datetime="2025-08-19T15:19:10.000Z" title="更新于 2025-08-19 23:19:10" time="2025-08-19 23:19:10">2025-08-19</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Linux/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Linux</span></a><a class="article-meta__tags" href="/tags/Server/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Server</span></a><a class="article-meta__tags" href="/tags/Fedora/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Fedora</span></a><a class="article-meta__tags" href="/tags/Clash/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Clash</span></a><a class="article-meta__tags" href="/tags/TUN/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>TUN</span></a><a class="article-meta__tags" href="/tags/NoGUI/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>NoGUI</span></a><a class="article-meta__tags" href="/tags/Yacd/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Yacd</span></a><a class="article-meta__tags" href="/tags/Docker/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Docker</span></a></span></div><div class="content">已有更加优雅的实现，详见 clash-for-linux-install
-
-引言
-在使用 Linux 服务器的过程中，常常遇到这样的问题：在 Clash 启动后还要为各种应用或服务设置系统代理，还可能遇到一些无法设置代理的软件导致无法访问，所以我们可以通过 Clash 的 TUN 模式 实现系统级的透明代理，让所有应用无需单独配置代理即可直接访问外网。再配合 Yacd 可视化管理面板，我们就能非常直观地管理和切换节点，大大提升使用体验。
-开始前准备
-
-安装脚本依赖
-
-git
-iproute
-nftables
-
-
-Yacd 依赖
-
-docker
-
-
-
-
-安装 Clash-TUN
-安装 clash-tun
-
-
-克隆项目
-git clone https://github.com/blue7wings/clash-tun# 连不上 github 可使用反代# 如： git clone https://gh.llkk.cc/https://github.com/blue7wings/clash-tuncd clash-tun
-
-
-配置设置
-sudo mkdir /srv/clash/sudo m ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/17284.html')"><div class="post_cover left"><a href="/post/17284.html" title="飞牛 OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接）" style="display: flex;height: 100%;"><img class="post_bg" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://api.041218.xyz/pic/Blog/2025/07/23/21-cover-img.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="飞牛 OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接）" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">FnOS</div><a class="unvisited-post" href="/post/17284.html" title="飞牛 OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接）">未读</a></div><a class="article-title" href="/post/17284.html" title="飞牛 OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接）">飞牛 OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接）</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-07-23T05:35:10.321Z" title="发表于 2025-07-23 13:35:10" time="2025-07-23 13:35:10">2025-07-23</time><time class="time_hidden" datetime="2025-07-23T05:35:10.321Z" title="更新于 2025-07-23 13:35:10" time="2025-07-23 13:35:10">2025-07-23</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/FnOS/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>FnOS</span></a><a class="article-meta__tags" href="/tags/SSL/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>SSL</span></a><a class="article-meta__tags" href="/tags/Https/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Https</span></a></span></div><div class="content">开始前准备
-
-1Panel
-DNS 账号（本文以 Cloudflare 为例）
-有手就行
-
-
-创建证书推送文件夹
-在用户目录下创建一个接收证书的文件夹，1Panel 申请的证书将会推送到这里（如下图所示）
-建议右键文件夹后在文件夹详细信息中复制原始路径备用
-
-
-使用 1Panel 申请 SSL 证书
-1. 进入证书页添加域名 DNS 账号
-进入证书页后点击 DNS 账户按钮添加 DNS 账户
-
-进入 Cloudflare Dashboard 获取 API 令牌，点击创建令牌创建具有编辑 DNS 权限的令牌。
-
-2. 创建 Acme 账户
-填写邮箱后点击确定
-
-3. 申请域名并设置推送文件夹证书
-输入主域名后按需填写选项，开启自动续签，并设置证书推送目录
-
-设置重命名脚本
-1Panel 申请的证书默认为 证书文件fullchain.pem 密钥文件：privkey.pem，重命名以便我们更好的管理证书。
-# xxx 改为你的主域名mv fullchain.pem xxx.crtmv privkey.pem xxx.key
-最后点击确认，等待几分钟即可申请到证书。
-
-将证书上传到 FnOS ...</div></div></div><div class="recent-post-item" onclick="pjax.loadUrl('/post/32059.html')"><div class="post_cover left"><a href="/post/32059.html" title="更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复" style="display: flex;height: 100%;"><img class="post_bg" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://api.041218.xyz/pic/Blog/20250209214612081.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复" style="pointer-events: none"></a></div><div class="recent-post-info"><div class="recent-post-info-top"><div class="recent-post-info-top-tips"><div class="article-categories-original">Linux</div><a class="unvisited-post" href="/post/32059.html" title="更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复">未读</a></div><a class="article-title" href="/post/32059.html" title="更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复">更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复</a></div><div class="article-meta-wrap"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days" style="font-size: 15px; display:none"></i><span class="article-meta-label">发表于</span><time datetime="2025-02-09T07:02:50.084Z" title="发表于 2025-02-09 15:02:50" time="2025-02-09 15:02:50">2025-02-09</time><time class="time_hidden" datetime="2025-02-09T14:05:10.332Z" title="更新于 2025-02-09 22:05:10" time="2025-02-09 22:05:10">2025-02-09</time></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/Ubuntu/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Ubuntu</span></a><a class="article-meta__tags" href="/tags/Xrdp/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Xrdp</span></a><a class="article-meta__tags" href="/tags/Xorgxrdp/" event.cancelbubble onclick="window.event.cancelBubble=true;"><span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>Xorgxrdp</span></a></span></div><div class="content">问题描述
-Ubuntu 更新到 24.10 后, 使用 apt 安装 xrdp
-sudo apt install xrdp
-添加 gnome-session 到 ~/.xsession
-echo "gnome-session" | tee ~/.xsession
-在 Windows 上使用远程桌面连接 Ubuntu 登录 Xorg 后闪退
-查看 .xorgxrdp.10.log 发现客户端的版本比预期的要旧，但是更新客户端版本也不行。
-[ 10160.761] rdpClientConProcessMsgClientInfo:[ 10160.761] expected xrdp client_info version 20230425, got 20210723[ 10160.761] (EE)Fatal server error:[ 10160.761] (EE) Incompatible xrdp version detected  - please recompile(EE)[ 10160.761] (EE)Please consult the The X.Org Foundat ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><div class="toPageGroup"><input id="toPageText" oninput="value=value.replace(/[^0-9]/g,'')" maxlength="3" onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')" aria-label="toPage"><a id="toPageButton" onclick="anzhiyu.toPage()"><i class="anzhiyufont anzhiyu-icon-angles-right" style="font-weight: inherit; font-size: 1rem;"></i></a></div></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://api.041218.xyz/pic/Blog/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "/img/loading.gif" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description">相信你可以在这里找到对你有用的知识和教程</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">Ctanhuawu</h1><div class="author-info__desc">无限进步</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/ctanhuawu" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/405496933" rel="external nofollow noreferrer" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget"><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Blog/" style="font-size: 1.05rem;">Blog<sup>2</sup></a><a href="/tags/CDN/" style="font-size: 1.05rem;">CDN<sup>1</sup></a><a href="/tags/Clash/" style="font-size: 1.05rem;">Clash<sup>1</sup></a><a href="/tags/Docker/" style="font-size: 1.05rem;">Docker<sup>1</sup></a><a href="/tags/Fedora/" style="font-size: 1.05rem;">Fedora<sup>1</sup></a><a href="/tags/Fix/" style="font-size: 1.05rem;">Fix<sup>1</sup></a><a href="/tags/FnOS/" style="font-size: 1.05rem;">FnOS<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 1.05rem;">Hexo<sup>2</sup></a><a href="/tags/Https/" style="font-size: 1.05rem;">Https<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>1</sup></a><a href="/tags/NoGUI/" style="font-size: 1.05rem;">NoGUI<sup>1</sup></a><a href="/tags/SSL/" style="font-size: 1.05rem;">SSL<sup>1</sup></a><a href="/tags/Server/" style="font-size: 1.05rem;">Server<sup>1</sup></a><a href="/tags/TUN/" style="font-size: 1.05rem;">TUN<sup>1</sup></a><a href="/tags/Ubuntu/" style="font-size: 1.05rem;">Ubuntu<sup>1</sup></a><a href="/tags/Xorgxrdp/" style="font-size: 1.05rem;">Xorgxrdp<sup>1</sup></a><a href="/tags/Xrdp/" style="font-size: 1.05rem;">Xrdp<sup>1</sup></a><a href="/tags/Yacd/" style="font-size: 1.05rem;">Yacd<sup>1</sup></a><a href="/tags/anzhiyu/" style="font-size: 1.05rem;">anzhiyu<sup>1</sup></a><a href="/tags/font/" style="font-size: 1.05rem;">font<sup>1</sup></a><a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 1.05rem;">优化<sup>1</sup></a><a href="/tags/%E5%AD%97%E4%BD%93/" style="font-size: 1.05rem;">字体<sup>1</sup></a><a href="/tags/%E5%AE%89%E7%9F%A5%E9%B1%BC/" style="font-size: 1.05rem;">安知鱼<sup>2</sup></a></div></div><hr/><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/12/"><span class="card-archive-list-date">十二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">八月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">七月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/><div class="card-webinfo"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-file-lines"></i><div class="item-name">文章总数 :</div></div><div class="item-count">5</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-stopwatch"></i><div class="item-name">建站天数 :</div></div><div class="item-count" id="runtimeshow" data-publishDate="2025-01-01T16:00:00.000Z"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-font"></i><div class="item-name">全站字数 :</div></div><div class="item-count">2.7k</div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-universal-access"></i><div class="item-name">总访客数 :</div></div><div class="item-count" id="busuanzi_value_site_uv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div><div class="webinfo-item"><div class="webinfo-item-title"><i class="anzhiyufont anzhiyu-icon-square-poll-vertical"></i><div class="item-name">总访问量 :</div></div><div class="item-count" id="busuanzi_value_site_pv"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></div></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 By <a class="footer-bar-link" href="/" title="Ctanhuawu" target="_blank">Ctanhuawu</a></div></div><div id="footer-type-tips"></div><div class="js-pjax"><script>function subtitleType () {
-  fetch('https://v1.hitokoto.cn')
-    .then(response => response.json())
-    .then(data => {
-      if (true) {
-        const from = '出自 ' + data.from
-        const sub = []
-        sub.unshift(data.hitokoto, from)
-        window.typed = new Typed('#footer-type-tips', {
-          strings: sub,
-          startDelay: 300,
-          typeSpeed: 150,
-          loop: true,
-          backSpeed: 50,
-        })
-      } else {
-        document.getElementById('footer-type-tips').innerHTML = data.hitokoto
-      }
-    })
 }
 
-if (true) {
-  if (typeof Typed === 'function') {
-    subtitleType()
-  } else {
-    getScript('https://cdn.cbd.int/typed.js@2.1.0/dist/typed.umd.js').then(subtitleType)
-  }
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadPagefind);
 } else {
-  subtitleType()
+    loadPagefind();
 }
-</script></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a><a class="footer-bar-link" target="_blank" rel="noopener external nofollow noreferrer" href="https://icp.gov.moe/?keyword=20259984" title="萌ICP备20259984号">萌ICP备20259984号</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" rel="external nofollow noreferrer" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 备链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="https://blog.041218.xyz"><i class="anzhiyufont anzhiyu-icon-house-chimney faa-tada" style="font-size: 0.9em;"></i><span> 主站</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo-blog-one-pi.vercel.app/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> Vercel</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener external nofollow noreferrer" href="https://ctanhuawu-blog.web.app/"><i class="anzhiyufont anzhiyu-icon-link faa-tada" style="font-size: 0.9em;"></i><span> FireBase</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><span> 监测</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener external nofollow noreferrer" href="https://api.041218.xyz/server/umami/share/x5U48huDhshtBRaZ/blog.ccwait.com"><i class="anzhiyufont anzhiyu-icon-chart-line faa-tada" style="font-size: 0.9em;"></i><span> 站点统计</span></a></li><li><a class="site-page child faa-parent animated-hover" target="_blank" rel="noopener external nofollow noreferrer" href="https://os-status.041218.xyz/status/guest"><i class="anzhiyufont anzhiyu-icon-heartbeat faa-tada" style="font-size: 0.9em;"></i><span> 服务监测</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Blog/" style="font-size: 0.88rem;">Blog<sup>2</sup></a><a href="/tags/CDN/" style="font-size: 0.88rem;">CDN<sup>1</sup></a><a href="/tags/Clash/" style="font-size: 0.88rem;">Clash<sup>1</sup></a><a href="/tags/Docker/" style="font-size: 0.88rem;">Docker<sup>1</sup></a><a href="/tags/Fedora/" style="font-size: 0.88rem;">Fedora<sup>1</sup></a><a href="/tags/Fix/" style="font-size: 0.88rem;">Fix<sup>1</sup></a><a href="/tags/FnOS/" style="font-size: 0.88rem;">FnOS<sup>1</sup></a><a href="/tags/Hexo/" style="font-size: 0.88rem;">Hexo<sup>2</sup></a><a href="/tags/Https/" style="font-size: 0.88rem;">Https<sup>1</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>1</sup></a><a href="/tags/NoGUI/" style="font-size: 0.88rem;">NoGUI<sup>1</sup></a><a href="/tags/SSL/" style="font-size: 0.88rem;">SSL<sup>1</sup></a><a href="/tags/Server/" style="font-size: 0.88rem;">Server<sup>1</sup></a><a href="/tags/TUN/" style="font-size: 0.88rem;">TUN<sup>1</sup></a><a href="/tags/Ubuntu/" style="font-size: 0.88rem;">Ubuntu<sup>1</sup></a><a href="/tags/Xorgxrdp/" style="font-size: 0.88rem;">Xorgxrdp<sup>1</sup></a><a href="/tags/Xrdp/" style="font-size: 0.88rem;">Xrdp<sup>1</sup></a><a href="/tags/Yacd/" style="font-size: 0.88rem;">Yacd<sup>1</sup></a><a href="/tags/anzhiyu/" style="font-size: 0.88rem;">anzhiyu<sup>1</sup></a><a href="/tags/font/" style="font-size: 0.88rem;">font<sup>1</sup></a><a href="/tags/%E4%BC%98%E5%8C%96/" style="font-size: 0.88rem;">优化<sup>1</sup></a><a href="/tags/%E5%AD%97%E4%BD%93/" style="font-size: 0.88rem;">字体<sup>1</sup></a><a href="/tags/%E5%AE%89%E7%9F%A5%E9%B1%BC/" style="font-size: 0.88rem;">安知鱼<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="is-center" id="loading-database"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-pulse-icon"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://music.163.com/playlist?id=9095527616&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>var meting_api = "https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r";
-</script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
-var HoldLog = console.log;
-console.log = function () {};
-let now1 = new Date();
-queueMicrotask(() => {
-  const Log = function () {
-    HoldLog.apply(console, arguments);
-  }; //在恢复前输出日志
-  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
-  now1.setTime(now1.getTime() + 250);
-  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
-  const dnum = Math.floor(days);
-  const ascll = [
-    `欢迎使用安知鱼!`,
-    `生活明朗, 万物可爱`,
-    `
-        
-       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
-      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
-      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
-      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
-      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
-      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
-        
-        `,
-    "已上线",
-    dnum,
-    "天",
-    "©2025 By 安知鱼 V1.6.14",
-  ];
-  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
-
-  setTimeout(
-    Log.bind(
-      console,
-      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
-      "color:#425AEF",
-      "",
-      "color:#425AEF",
-      "color:#425AEF",
-      "",
-      "color:#425AEF",
-      ""
-    )
-  );
-  setTimeout(
-    Log.bind(
-      console,
-      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
-      "color:white; background-color:#4fd953",
-      "",
-      "",
-      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
-    )
-  );
-
-  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
-
-  setTimeout(
-    console.warn.bind(
-      console,
-      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Ctanhuawu 的博客.",
-      "color:white; background-color:#f0ad4e",
-      ""
-    )
-  );
-
-  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
-
-  setTimeout(
-    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
-  );
-});</script><script async src="/anzhiyu/random.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (typeof gsap === "object") {
-  getScript("/js/anzhiyu/people.js", {defer:true})
-} else {
-  getScript("https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/gsap/gsap.min.js").then(()=>{
-    getScript("/js/anzhiyu/people.js", {defer:true})
-  });
-}</script><script>(() => {
-  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
-  if ($mermaid.length === 0) return
-  const runMermaid = () => {
-    window.loadMermaid = true
-    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
-
-    Array.from($mermaid).forEach((item, index) => {
-      const mermaidSrc = item.firstElementChild
-      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
-      const mermaidID = 'mermaid-' + index
-      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
-
-      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
-
-      const renderV10 = () => {
-        renderFn.then(({svg}) => {
-          mermaidSrc.insertAdjacentHTML('afterend', svg)
-        })
-      }
-
-      const renderV9 = svg => {
-        mermaidSrc.insertAdjacentHTML('afterend', svg)
-      }
-
-      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
-    })
-  }
-
-  const loadMermaid = () => {
-    window.loadMermaid ? runMermaid() : getScript('https://cdn.cbd.int/mermaid@10.2.4/dist/mermaid.min.js').then(runMermaid)
-  }
-
-  anzhiyu.addGlobalFn('themeChange', runMermaid, 'mermaid')
-
-  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
-})()</script><input type="hidden" name="page-type" id="page-type" value="anzhiyu"></div><script>window.addEventListener('load', () => {
-  const changeContent = (content) => {
-    if (content === '') return content
-
-    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
-    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
-    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
-    content = content.replace(/<[^>]+>/g,"") // remove html tag
-
-    if (content.length > 150) {
-      content = content.substring(0,150) + '...'
-    }
-    return content
-  }
-
-  const getComment = () => {
-    const runTwikoo = () => {
-      twikoo.getRecentComments({
-        envId: 'https://twikoo-ctanhuawu.netlify.app/.netlify/functions/twikoo',
-        region: '',
-        pageSize: 6,
-        includeReply: true
-      }).then(function (res) {
-        const twikooArray = res.map(e => {
-          return {
-            'content': changeContent(e.comment),
-            'avatar': e.avatar,
-            'nick': e.nick,
-            'url': e.url + '#' + e.id,
-            'date': new Date(e.created).toISOString()
-          }
-        })
-
-        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
-        generateHtml(twikooArray)
-      }).catch(function (err) {
-        const $dom = document.querySelector('#card-newest-comments .aside-list')
-        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
-      })
-    }
-
-    if (typeof twikoo === 'object') {
-      runTwikoo()
-    } else {
-      getScript('https://s4.zstatic.net/ajax/libs/twikoo/1.6.44/twikoo.all.min.js').then(runTwikoo)
-    }
-  }
-
-  const generateHtml = array => {
-    let result = ''
-
-    if (array.length) {
-      for (let i = 0; i < array.length; i++) {
-        result += '<div class=\'aside-list-item\'>'
-
-        if (true) {
-          const name = 'data-lazy-src'
-          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
-        }
-        
-        result += `<div class='content'>
-        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
-        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
-        </div>`
-      }
-    } else {
-      result += '没有评论'
-    }
-
-    let $dom = document.querySelector('#card-newest-comments .aside-list')
-    $dom && ($dom.innerHTML= result)
-    window.lazyLoadInstance && window.lazyLoadInstance.update()
-    window.pjax && window.pjax.refresh($dom)
-  }
-
-  const newestCommentInit = () => {
-    if (document.querySelector('#card-newest-comments .aside-list')) {
-      const data = saveToLocal.get('twikoo-newest-comments')
-      if (data) {
-        generateHtml(JSON.parse(data))
-      } else {
-        getComment()
-      }
-    }
-  }
-
-  newestCommentInit()
-  document.addEventListener('pjax:complete', newestCommentInit)
-})</script><script>var visitorMail = "";
-</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script id="click-show-text" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="true" data-text="こ,こ,だ,よ" data-fontsize="15px" data-random="false" async="async"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://npm.elemecdn.com/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","meta[property=\"og:type\"]","meta[property=\"og:site_name\"]","meta[property=\"og:description\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
-var pjax = new Pjax({
-  elements: 'a:not([target="_blank"])',
-  selectors: pjaxSelectors,
-  cacheBust: false,
-  analytics: false,
-  scrollRestoration: false
-})
-
-document.addEventListener('pjax:send', function () {
-  // removeEventListener scroll 
-  anzhiyu.removeGlobalFnEvent('pjax')
-  anzhiyu.removeGlobalFnEvent('themeChange')
-
-  document.getElementById('rightside').classList.remove('rightside-show')
-  
-  if (window.aplayers) {
-    for (let i = 0; i < window.aplayers.length; i++) {
-      if (!window.aplayers[i].options.fixed) {
-        window.aplayers[i].destroy()
-      }
-    }
-  }
-
-  typeof typed === 'object' && typed.destroy()
-
-  //reset readmode
-  const $bodyClassList = document.body.classList
-  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
-})
-
-document.addEventListener('pjax:complete', function () {
-  window.refreshFn()
-
-  document.querySelectorAll('script[data-pjax]').forEach(item => {
-    const newScript = document.createElement('script')
-    const content = item.text || item.textContent || item.innerHTML || ""
-    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-    newScript.appendChild(document.createTextNode(content))
-    item.parentNode.replaceChild(newScript, item)
-  })
-
-  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
-
-  typeof panguInit === 'function' && panguInit()
-
-  // google analytics
-  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
-
-  // baidu analytics
-  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
-
-  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
-
-  // prismjs
-  typeof Prism === 'object' && Prism.highlightAll()
-})
-
-document.addEventListener('pjax:error', e => {
-  if (e.request.status === 404) {
-    pjax.loadUrl('/404.html')
-  }
-})</script><script async data-pjax src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script><div id="greetingBox"></div></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
+})();</script> </div> </div>  <div id="banner-wrapper" class="absolute z-10 w-full transition duration-700 overflow-hidden" style="top: -30vh"> <div id="banner" class="object-cover h-full transition duration-700 opacity-0 scale-105 overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="/img/index-bg.jpg" alt="Banner image of the blog" class="w-full h-full object-cover" style="object-position: center"> </div> <div class="absolute inset-0 flex items-center justify-center pointer-events-none px-6"> <div class="text-center"> <div class="text-white/95 drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] text-2xl md:text-4xl font-semibold tracking-[0.12em]"> 无限进步 </div> </div> </div> </div> <div class="absolute w-full z-30 pointer-events-none" style="top: calc(35vh - 3.5rem)"> <!-- The pointer-events-none here prevent blocking the click event of the TOC --> <div class="relative max-w-[var(--page-width)] mx-auto pointer-events-auto"> <div id="main-grid" class="transition duration-700 w-full left-0 right-0 grid grid-cols-[17.5rem_auto] grid-rows-[auto_1fr_auto] lg:grid-rows-[auto]
+    mx-auto gap-4 px-0 md:px-4"> <!-- Banner image credit -->  <div id="sidebar" class="mb-4 row-start-2 row-end-3 col-span-2 lg:row-start-1 lg:row-end-2 lg:col-span-1 lg:max-w-[17.5rem] onload-animation w-full"> <div class="flex flex-col w-full gap-4 mb-4"> <div class="card-base p-3"> <a aria-label="Go to About Page" href="/about/" class="group block relative mx-auto mt-1 lg:mx-0 lg:mt-0 mb-3
+       max-w-[12rem] lg:max-w-none overflow-hidden rounded-xl active:scale-95"> <div class="absolute transition pointer-events-none group-hover:bg-black/30 group-active:bg-black/50
+        w-full h-full z-50 flex items-center justify-center"> <svg width="1.13em" height="1em" class="transition opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 text-white text-5xl" data-icon="fa6-regular:address-card">   <symbol id="ai:fa6-regular:address-card" viewBox="0 0 576 512"><path fill="currentColor" d="M512 80c8.8 0 16 7.2 16 16v320c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64zm144 224a64 64 0 1 0 0-128a64 64 0 1 0 0 128m-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16h192c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80zm200-144c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24z"/></symbol><use href="#ai:fa6-regular:address-card"></use>  </svg> </div> <div class="mx-auto lg:w-full h-full lg:mt-0  overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="https://api.041218.xyz/pic/Blog/avatar.jpg" alt="Profile Image of the Author" class="w-full h-full object-cover" style="object-position: center"> </div> </a> <div class="px-2"> <div class="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition">Ctanhuawu</div> <div class="h-1 w-5 bg-[var(--primary)] mx-auto rounded-full mb-2 transition"></div> <div class="text-center text-neutral-400 mb-2.5 transition">相信你可以在这里找到对你有用的知识和教程</div> <div class="flex flex-wrap gap-2 justify-center mb-1"> <a rel="me" aria-label="GitHub" href="https://github.com/Ctanhuawu" target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90"> <svg width="0.97em" height="1em" class="text-[1.5rem]" data-icon="fa6-brands:github">   <symbol id="ai:fa6-brands:github" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6c-3.3.3-5.6-1.3-5.6-3.6c0-2 2.3-3.6 5.2-3.6c3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9c2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9c.3 2 2.9 3.3 5.9 2.6c2.9-.7 4.9-2.6 4.6-4.6c-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2c12.8 2.3 17.3-5.6 17.3-12.1c0-6.2-.3-40.4-.3-61.4c0 0-70 15-84.7-29.8c0 0-11.4-29.1-27.8-36.6c0 0-22.9-15.7 1.6-15.4c0 0 24.9 2 38.6 25.8c21.9 38.6 58.6 27.5 72.9 20.9c2.3-16 8.8-27.1 16-33.7c-55.9-6.2-112.3-14.3-112.3-110.5c0-27.5 7.6-41.3 23.6-58.9c-2.6-6.5-11.1-33.3 2.6-67.9c20.9-6.5 69 27 69 27c20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27c13.7 34.7 5.2 61.4 2.6 67.9c16 17.7 25.8 31.5 25.8 58.9c0 96.5-58.9 104.2-114.8 110.5c9.2 7.9 17 22.9 17 46.4c0 33.7-.3 75.4-.3 83.6c0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252C496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2c1.6 1.6 3.9 2.3 5.2 1c1.3-1 1-3.3-.7-5.2c-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9c1.6 1 3.6.7 4.3-.7c.7-1.3-.3-2.9-2.3-3.9c-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2c2.3 2.3 5.2 2.6 6.5 1c1.3-1.3.7-4.3-1.3-6.2c-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2c-1.4-2.3-4-3.3-5.6-2"/></symbol><use href="#ai:fa6-brands:github"></use>  </svg> </a><a rel="me" aria-label="BiliBili" href="https://space.bilibili.com/405496933" target="_blank" class="btn-regular rounded-lg h-10 w-10 active:scale-90"> <svg width="1em" height="1em" class="text-[1.5rem]" data-icon="fa6-brands:bilibili">   <symbol id="ai:fa6-brands:bilibili" viewBox="0 0 512 512"><path fill="currentColor" d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1c-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79c0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797c0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5c-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8c-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2c-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5s-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5s-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></symbol><use href="#ai:fa6-brands:bilibili"></use>  </svg> </a>  </div> </div> </div> </div> <div id="sidebar-sticky" class="transition-all duration-700 flex flex-col w-full gap-4 top-4 sticky top-4"> <widget-layout data-id="categories" data-is-collapsed="false" class="pb-4 card-base onload-animation" style="animation-delay: 150ms; --collapsedHeight: 7.5rem;" data-astro-cid-ucso7hve="true"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;">分类</div> <div id="categories" class="collapse-wrapper px-4 overflow-hidden" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;"> <a href="/archive/?category=FnOS" aria-label="View all posts in the FnOS category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-[var(--btn-plain-bg-hover)]
+            active:bg-[var(--btn-plain-bg-active)]
+            transition-all
+            pl-2
+            hover:pl-3
+            
+            text-neutral-700
+            hover:text-[var(--primary)]
+            dark:text-neutral-300
+            dark:hover:text-[var(--primary)]
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis  "> FnOS </div> <div class="transition px-2 h-7 ml-4 min-w-[2rem] rounded-lg text-sm font-bold
+                    text-[var(--btn-content)] dark:text-[var(--deep-text)]
+                    bg-[var(--btn-regular-bg)] dark:bg-[var(--primary)]
+                    flex items-center justify-center"> 1 </div> </div> </button> </a><a href="/archive/?category=Hexo" aria-label="View all posts in the Hexo category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-[var(--btn-plain-bg-hover)]
+            active:bg-[var(--btn-plain-bg-active)]
+            transition-all
+            pl-2
+            hover:pl-3
+            
+            text-neutral-700
+            hover:text-[var(--primary)]
+            dark:text-neutral-300
+            dark:hover:text-[var(--primary)]
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis  "> Hexo </div> <div class="transition px-2 h-7 ml-4 min-w-[2rem] rounded-lg text-sm font-bold
+                    text-[var(--btn-content)] dark:text-[var(--deep-text)]
+                    bg-[var(--btn-regular-bg)] dark:bg-[var(--primary)]
+                    flex items-center justify-center"> 2 </div> </div> </button> </a><a href="/archive/?category=Linux" aria-label="View all posts in the Linux category"> <button class="
+            w-full
+            h-10
+            rounded-lg
+            bg-none
+            hover:bg-[var(--btn-plain-bg-hover)]
+            active:bg-[var(--btn-plain-bg-active)]
+            transition-all
+            pl-2
+            hover:pl-3
+            
+            text-neutral-700
+            hover:text-[var(--primary)]
+            dark:text-neutral-300
+            dark:hover:text-[var(--primary)]
+        "> <div class="flex items-center justify-between relative mr-2"> <div class="overflow-hidden text-left whitespace-nowrap overflow-ellipsis  "> Linux </div> <div class="transition px-2 h-7 ml-4 min-w-[2rem] rounded-lg text-sm font-bold
+                    text-[var(--btn-content)] dark:text-[var(--deep-text)]
+                    bg-[var(--btn-regular-bg)] dark:bg-[var(--primary)]
+                    flex items-center justify-center"> 2 </div> </div> </button> </a> </div>  </widget-layout>  <script type="module">class d extends HTMLElement{constructor(){if(super(),this.dataset.isCollapsed!=="true")return;const e=this.dataset.id,t=this.querySelector(".expand-btn"),s=this.querySelector(`#${e}`);t.addEventListener("click",()=>{s.classList.remove("collapsed"),t.classList.add("hidden")})}}customElements.get("widget-layout")||customElements.define("widget-layout",d);</script> <widget-layout data-id="tags" data-is-collapsed="true" class="pb-4 card-base onload-animation" style="animation-delay: 200ms; --collapsedHeight: 7.5rem;" data-astro-cid-ucso7hve="true"> <div class="font-bold transition text-lg text-neutral-900 dark:text-neutral-100 relative ml-8 mt-4 mb-2
+        before:w-1 before:h-4 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:left-[-16px] before:top-[5.5px]" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;">标签</div> <div id="tags" class="collapse-wrapper px-4 overflow-hidden collapsed" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;">  <div class="flex gap-2 flex-wrap"> <a href="/archive/?tag=anzhiyu" aria-label="View all posts with the anzhiyu tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  anzhiyu </a><a href="/archive/?tag=Blog" aria-label="View all posts with the Blog tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Blog </a><a href="/archive/?tag=CDN" aria-label="View all posts with the CDN tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  CDN </a><a href="/archive/?tag=Clash" aria-label="View all posts with the Clash tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Clash </a><a href="/archive/?tag=Docker" aria-label="View all posts with the Docker tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Docker </a><a href="/archive/?tag=Fedora" aria-label="View all posts with the Fedora tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Fedora </a><a href="/archive/?tag=Fix" aria-label="View all posts with the Fix tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Fix </a><a href="/archive/?tag=FnOS" aria-label="View all posts with the FnOS tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  FnOS </a><a href="/archive/?tag=font" aria-label="View all posts with the font tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  font </a><a href="/archive/?tag=Hexo" aria-label="View all posts with the Hexo tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Hexo </a><a href="/archive/?tag=Https" aria-label="View all posts with the Https tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Https </a><a href="/archive/?tag=Linux" aria-label="View all posts with the Linux tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Linux </a><a href="/archive/?tag=NoGUI" aria-label="View all posts with the NoGUI tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  NoGUI </a><a href="/archive/?tag=Server" aria-label="View all posts with the Server tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Server </a><a href="/archive/?tag=SSL" aria-label="View all posts with the SSL tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  SSL </a><a href="/archive/?tag=TUN" aria-label="View all posts with the TUN tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  TUN </a><a href="/archive/?tag=Ubuntu" aria-label="View all posts with the Ubuntu tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Ubuntu </a><a href="/archive/?tag=Xorgxrdp" aria-label="View all posts with the Xorgxrdp tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Xorgxrdp </a><a href="/archive/?tag=Xrdp" aria-label="View all posts with the Xrdp tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Xrdp </a><a href="/archive/?tag=Yacd" aria-label="View all posts with the Yacd tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  Yacd </a><a href="/archive/?tag=%E4%BC%98%E5%8C%96" aria-label="View all posts with the 优化 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  优化 </a><a href="/archive/?tag=%E5%AD%97%E4%BD%93" aria-label="View all posts with the 字体 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  字体 </a><a href="/archive/?tag=%E5%AE%89%E7%9F%A5%E9%B1%BC" aria-label="View all posts with the 安知鱼 tag" class="btn-regular h-8 text-sm px-3 rounded-lg">  安知鱼 </a> </div>  </div> <div class="expand-btn px-4 -mb-2" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;"> <button class="btn-plain rounded-lg w-full h-9" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;"> <div class="text-[var(--primary)] flex items-center justify-center gap-2 -translate-x-2" data-astro-cid-ucso7hve style="--collapsedHeight: 7.5rem;"> <svg width="1em" height="1em" class="text-[1.75rem]" data-astro-cid-ucso7hve="true" data-icon="material-symbols:more-horiz">   <symbol id="ai:material-symbols:more-horiz" viewBox="0 0 24 24"><path fill="currentColor" d="M6 14q-.825 0-1.412-.587T4 12t.588-1.412T6 10t1.413.588T8 12t-.587 1.413T6 14m6 0q-.825 0-1.412-.587T10 12t.588-1.412T12 10t1.413.588T14 12t-.587 1.413T12 14m6 0q-.825 0-1.412-.587T16 12t.588-1.412T18 10t1.413.588T20 12t-.587 1.413T18 14"/></symbol><use href="#ai:material-symbols:more-horiz"></use>  </svg> 更多 </div> </button> </div> </widget-layout>   </div> </div> <main id="swup-container" class="transition-swup-fade col-span-2 lg:col-span-1 overflow-hidden"> <div id="content-wrapper" class="onload-animation"> <!-- the overflow-hidden here prevent long text break the layout--> <!-- make id different from windows.swup global property -->  <div class="transition flex flex-col rounded-[var(--radius-large)] bg-[var(--card-bg)] py-1 md:py-0 md:bg-transparent md:gap-4 mb-4"> <div class="card-base flex flex-col-reverse md:flex-col w-full rounded-[var(--radius-large)] overflow-hidden relative onload-animation" style="animation-delay: calc(var(--content-delay) + 0ms);; --coverWidth: 28%;" data-astro-cid-iyiqi2so> <div class="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative w-full md:w-[calc(100%_-_var(--coverWidth)_-_12px)]" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <a href="/posts/hexo-font-split/" class="transition group w-full block font-bold mb-3 text-3xl text-90
+        hover:text-[var(--primary)] dark:hover:text-[var(--primary)]
+        active:text-[var(--title-active)] dark:active:text-[var(--title-active)]
+        before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:top-[35px] before:left-[18px] before:hidden md:before:block
+        " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> Hexo 字体分片加载实践 <svg width="1em" height="1em" viewBox="0 0 24 24" class="inline text-[2rem] text-[var(--primary)] md:hidden translate-y-0.5 absolute" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[var(--primary)] text-[2rem] transition hidden md:inline absolute translate-y-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </a> <!-- metadata --> <div class="flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2 mb-4"> <!-- publish date --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:calendar-today-outline-rounded">   <symbol id="ai:material-symbols:calendar-today-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5zM5 8h14V6H5zm0 0V6z"/></symbol><use href="#ai:material-symbols:calendar-today-outline-rounded"></use>  </svg> </div> <span class="text-50 text-sm font-medium">2025-12-02</span> </div> <!-- update date -->  <!-- categories --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:book-2-outline-rounded">   <symbol id="ai:material-symbols:book-2-outline-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="M6 15.325q.35-.175.725-.25T7.5 15H8V4h-.5q-.625 0-1.062.438T6 5.5zM10 15h8V4h-8zm-4 .325V4zM7.5 22q-1.45 0-2.475-1.025T4 18.5v-13q0-1.45 1.025-2.475T7.5 2H18q.825 0 1.413.587T20 4v12.525q0 .2-.162.363t-.588.362q-.35.175-.55.5t-.2.75t.2.763t.55.487t.55.413t.2.562v.25q0 .425-.288.725T19 22zm0-2h9.325q-.15-.35-.237-.712T16.5 18.5q0-.4.075-.775t.25-.725H7.5q-.65 0-1.075.438T6 18.5q0 .65.425 1.075T7.5 20"/></symbol><use href="#ai:material-symbols:book-2-outline-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <a href="/archive/?category=Hexo" aria-label="View all posts in the Hexo category" class="link-lg transition text-50 text-sm font-medium
+                            hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Hexo </a> </div> </div> <!-- tags --> <div class="items-center hidden md:flex"> <div class="meta-icon"> <svg width="1em" height="1em" class="text-xl" data-icon="material-symbols:tag-rounded">   <symbol id="ai:material-symbols:tag-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m9 16l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T6.3 18.8L7 16H4.275q-.5 0-.8-.387T3.3 14.75q.075-.35.35-.55t.625-.2H7.5l1-4H5.775q-.5 0-.8-.387T4.8 8.75q.075-.35.35-.55t.625-.2H9l.825-3.275Q9.9 4.4 10.15 4.2t.6-.2q.475 0 .775.375t.175.825L11 8h4l.825-3.275q.075-.325.325-.525t.6-.2q.475 0 .775.375t.175.825L17 8h2.725q.5 0 .8.387t.175.863q-.075.35-.35.55t-.625.2H16.5l-1 4h2.725q.5 0 .8.388t.175.862q-.075.35-.35.55t-.625.2H15l-.825 3.275q-.075.325-.325.525t-.6.2q-.475 0-.775-.375T12.3 18.8L13 16zm.5-2h4l1-4h-4z"/></symbol><use href="#ai:material-symbols:tag-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <div class="hidden mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Hexo" aria-label="View all posts with the Hexo tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Hexo </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=%E5%AE%89%E7%9F%A5%E9%B1%BC" aria-label="View all posts with the 安知鱼 tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> 安知鱼 </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=%E5%AD%97%E4%BD%93" aria-label="View all posts with the 字体 tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> 字体 </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=font" aria-label="View all posts with the font tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> font </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Blog" aria-label="View all posts with the Blog tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Blog </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=%E4%BC%98%E5%8C%96" aria-label="View all posts with the 优化 tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> 优化 </a>  </div> </div> </div> <!-- description --> <div class="transition text-75 mb-3.5 pr-4" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 通过字体分片和按需加载，降低中文字体对 Hexo 博客首屏性能的影响。 </div> <!-- word count and read time  --> <div class="text-sm text-black/30 dark:text-white/30 flex gap-4 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 723  字 </div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;">|</div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 4  分钟 </div> </div> </div> <a href="/posts/hexo-font-split/" aria-label="Hexo 字体分片加载实践" class="group max-h-[20vh] md:max-h-none mx-4 mt-4 -mb-2 md:mb-0 md:mx-0 md:mt-0 md:w-[var(--coverWidth)] relative md:absolute md:top-3 md:bottom-3 md:right-3 rounded-xl overflow-hidden active:scale-95" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div class="absolute pointer-events-none z-10 w-full h-full group-hover:bg-black/30 group-active:bg-black/50 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="absolute pointer-events-none z-20 w-full h-full flex items-center justify-center " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 text-white text-5xl" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </div> <div class="w-full h-full overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/PixPin_2025-12-02_15-56-54.png" alt="Cover Image of the Post" class="w-full h-full object-cover" style="object-position: center"> </div> </a>  </div> <div class="transition border-t-[1px] border-dashed mx-6 border-black/10 dark:border-white/[0.15] last:border-t-0 md:hidden" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="card-base flex flex-col-reverse md:flex-col w-full rounded-[var(--radius-large)] overflow-hidden relative onload-animation" style="animation-delay: calc(var(--content-delay) + 50ms);; --coverWidth: 28%;" data-astro-cid-iyiqi2so> <div class="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative w-full md:w-[calc(100%_-_var(--coverWidth)_-_12px)]" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <a href="/posts/hexo-anzhiyu-image-fix/" class="transition group w-full block font-bold mb-3 text-3xl text-90
+        hover:text-[var(--primary)] dark:hover:text-[var(--primary)]
+        active:text-[var(--title-active)] dark:active:text-[var(--title-active)]
+        before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:top-[35px] before:left-[18px] before:hidden md:before:block
+        " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 由于 CDN 下线导致的，安知鱼主题图片无法显示/加载 <svg width="1em" height="1em" viewBox="0 0 24 24" class="inline text-[2rem] text-[var(--primary)] md:hidden translate-y-0.5 absolute" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[var(--primary)] text-[2rem] transition hidden md:inline absolute translate-y-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </a> <!-- metadata --> <div class="flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2 mb-4"> <!-- publish date --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:calendar-today-outline-rounded">   <use href="#ai:material-symbols:calendar-today-outline-rounded"></use>  </svg> </div> <span class="text-50 text-sm font-medium">2025-08-16</span> </div> <!-- update date -->  <!-- categories --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:book-2-outline-rounded">   <use href="#ai:material-symbols:book-2-outline-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <a href="/archive/?category=Hexo" aria-label="View all posts in the Hexo category" class="link-lg transition text-50 text-sm font-medium
+                            hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Hexo </a> </div> </div> <!-- tags --> <div class="items-center hidden md:flex"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:tag-rounded">   <use href="#ai:material-symbols:tag-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <div class="hidden mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Hexo" aria-label="View all posts with the Hexo tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Hexo </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=%E5%AE%89%E7%9F%A5%E9%B1%BC" aria-label="View all posts with the 安知鱼 tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> 安知鱼 </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=anzhiyu" aria-label="View all posts with the anzhiyu tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> anzhiyu </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Fix" aria-label="View all posts with the Fix tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Fix </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Blog" aria-label="View all posts with the Blog tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Blog </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=CDN" aria-label="View all posts with the CDN tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> CDN </a>  </div> </div> </div> <!-- description --> <div class="transition text-75 mb-3.5 pr-4" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 安知鱼主题图片无法显示时，如何定位失效 CDN 并替换为可用镜像。 </div> <!-- word count and read time  --> <div class="text-sm text-black/30 dark:text-white/30 flex gap-4 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 360  字 </div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;">|</div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 2  分钟 </div> </div> </div> <a href="/posts/hexo-anzhiyu-image-fix/" aria-label="由于 CDN 下线导致的，安知鱼主题图片无法显示/加载" class="group max-h-[20vh] md:max-h-none mx-4 mt-4 -mb-2 md:mb-0 md:mx-0 md:mt-0 md:w-[var(--coverWidth)] relative md:absolute md:top-3 md:bottom-3 md:right-3 rounded-xl overflow-hidden active:scale-95" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div class="absolute pointer-events-none z-10 w-full h-full group-hover:bg-black/30 group-active:bg-black/50 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="absolute pointer-events-none z-20 w-full h-full flex items-center justify-center " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 text-white text-5xl" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </div> <div class="w-full h-full overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="https://api.041218.xyz/pic/Blog/2025/08/16/131503271_p0_master1200.jpg" alt="Cover Image of the Post" class="w-full h-full object-cover" style="object-position: center"> </div> </a>  </div> <div class="transition border-t-[1px] border-dashed mx-6 border-black/10 dark:border-white/[0.15] last:border-t-0 md:hidden" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="card-base flex flex-col-reverse md:flex-col w-full rounded-[var(--radius-large)] overflow-hidden relative onload-animation" style="animation-delay: calc(var(--content-delay) + 100ms);; --coverWidth: 28%;" data-astro-cid-iyiqi2so> <div class="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative w-full md:w-[calc(100%_-_var(--coverWidth)_-_12px)]" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <a href="/posts/linux-server-clash-tun/" class="transition group w-full block font-bold mb-3 text-3xl text-90
+        hover:text-[var(--primary)] dark:hover:text-[var(--primary)]
+        active:text-[var(--title-active)] dark:active:text-[var(--title-active)]
+        before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:top-[35px] before:left-[18px] before:hidden md:before:block
+        " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程 <svg width="1em" height="1em" viewBox="0 0 24 24" class="inline text-[2rem] text-[var(--primary)] md:hidden translate-y-0.5 absolute" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[var(--primary)] text-[2rem] transition hidden md:inline absolute translate-y-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </a> <!-- metadata --> <div class="flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2 mb-4"> <!-- publish date --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:calendar-today-outline-rounded">   <use href="#ai:material-symbols:calendar-today-outline-rounded"></use>  </svg> </div> <span class="text-50 text-sm font-medium">2025-08-15</span> </div> <!-- update date -->  <!-- categories --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:book-2-outline-rounded">   <use href="#ai:material-symbols:book-2-outline-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <a href="/archive/?category=Linux" aria-label="View all posts in the Linux category" class="link-lg transition text-50 text-sm font-medium
+                            hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Linux </a> </div> </div> <!-- tags --> <div class="items-center hidden md:flex"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:tag-rounded">   <use href="#ai:material-symbols:tag-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <div class="hidden mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Linux" aria-label="View all posts with the Linux tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Linux </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Server" aria-label="View all posts with the Server tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Server </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Fedora" aria-label="View all posts with the Fedora tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Fedora </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Clash" aria-label="View all posts with the Clash tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Clash </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=TUN" aria-label="View all posts with the TUN tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> TUN </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=NoGUI" aria-label="View all posts with the NoGUI tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> NoGUI </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Yacd" aria-label="View all posts with the Yacd tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Yacd </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Docker" aria-label="View all posts with the Docker tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Docker </a>  </div> </div> </div> <!-- description --> <div class="transition text-75 mb-3.5 pr-4" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 在无图形界面的 Linux 服务器上部署 Clash TUN 模式，并结合 Yacd 实现透明代理与可视化管理。 </div> <!-- word count and read time  --> <div class="text-sm text-black/30 dark:text-white/30 flex gap-4 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 538  字 </div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;">|</div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 3  分钟 </div> </div> </div> <a href="/posts/linux-server-clash-tun/" aria-label="Linux Server 使用 Clash TUN 模式实现透明代理（Clash + Yacd 管理界面）保姆级教程" class="group max-h-[20vh] md:max-h-none mx-4 mt-4 -mb-2 md:mb-0 md:mx-0 md:mt-0 md:w-[var(--coverWidth)] relative md:absolute md:top-3 md:bottom-3 md:right-3 rounded-xl overflow-hidden active:scale-95" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div class="absolute pointer-events-none z-10 w-full h-full group-hover:bg-black/30 group-active:bg-black/50 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="absolute pointer-events-none z-20 w-full h-full flex items-center justify-center " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 text-white text-5xl" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </div> <div class="w-full h-full overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="https://api.041218.xyz/pic/Blog/2025/08/15/23-Clash%20%E8%83%8C%E6%99%AF.png" alt="Cover Image of the Post" class="w-full h-full object-cover" style="object-position: center"> </div> </a>  </div> <div class="transition border-t-[1px] border-dashed mx-6 border-black/10 dark:border-white/[0.15] last:border-t-0 md:hidden" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="card-base flex flex-col-reverse md:flex-col w-full rounded-[var(--radius-large)] overflow-hidden relative onload-animation" style="animation-delay: calc(var(--content-delay) + 150ms);; --coverWidth: 28%;" data-astro-cid-iyiqi2so> <div class="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative w-full md:w-[calc(100%_-_var(--coverWidth)_-_12px)]" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <a href="/posts/fnos-ssl-automatic-renewal/" class="transition group w-full block font-bold mb-3 text-3xl text-90
+        hover:text-[var(--primary)] dark:hover:text-[var(--primary)]
+        active:text-[var(--title-active)] dark:active:text-[var(--title-active)]
+        before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:top-[35px] before:left-[18px] before:hidden md:before:block
+        " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 飞牛OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接） <svg width="1em" height="1em" viewBox="0 0 24 24" class="inline text-[2rem] text-[var(--primary)] md:hidden translate-y-0.5 absolute" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[var(--primary)] text-[2rem] transition hidden md:inline absolute translate-y-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </a> <!-- metadata --> <div class="flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2 mb-4"> <!-- publish date --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:calendar-today-outline-rounded">   <use href="#ai:material-symbols:calendar-today-outline-rounded"></use>  </svg> </div> <span class="text-50 text-sm font-medium">2025-07-23</span> </div> <!-- update date -->  <!-- categories --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:book-2-outline-rounded">   <use href="#ai:material-symbols:book-2-outline-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <a href="/archive/?category=FnOS" aria-label="View all posts in the FnOS category" class="link-lg transition text-50 text-sm font-medium
+                            hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> FnOS </a> </div> </div> <!-- tags --> <div class="items-center hidden md:flex"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:tag-rounded">   <use href="#ai:material-symbols:tag-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <div class="hidden mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=FnOS" aria-label="View all posts with the FnOS tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> FnOS </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=SSL" aria-label="View all posts with the SSL tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> SSL </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Https" aria-label="View all posts with the Https tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Https </a>  </div> </div> </div> <!-- description --> <div class="transition text-75 mb-3.5 pr-4" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 通过 1Panel 为飞牛 OS 申请 SSL 证书，并用软连接实现自动续签。 </div> <!-- word count and read time  --> <div class="text-sm text-black/30 dark:text-white/30 flex gap-4 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 545  字 </div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;">|</div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 3  分钟 </div> </div> </div> <a href="/posts/fnos-ssl-automatic-renewal/" aria-label="飞牛OS 申请 SSL 证书并实现自动续签（1Panel + ln -s 软连接）" class="group max-h-[20vh] md:max-h-none mx-4 mt-4 -mb-2 md:mb-0 md:mx-0 md:mt-0 md:w-[var(--coverWidth)] relative md:absolute md:top-3 md:bottom-3 md:right-3 rounded-xl overflow-hidden active:scale-95" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div class="absolute pointer-events-none z-10 w-full h-full group-hover:bg-black/30 group-active:bg-black/50 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="absolute pointer-events-none z-20 w-full h-full flex items-center justify-center " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 text-white text-5xl" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </div> <div class="w-full h-full overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="https://api.041218.xyz/pic/Blog/2025/07/23/21-cover-img.jpg" alt="Cover Image of the Post" class="w-full h-full object-cover" style="object-position: center"> </div> </a>  </div> <div class="transition border-t-[1px] border-dashed mx-6 border-black/10 dark:border-white/[0.15] last:border-t-0 md:hidden" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="card-base flex flex-col-reverse md:flex-col w-full rounded-[var(--radius-large)] overflow-hidden relative onload-animation" style="animation-delay: calc(var(--content-delay) + 200ms);; --coverWidth: 28%;" data-astro-cid-iyiqi2so> <div class="pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative w-full md:w-[calc(100%_-_var(--coverWidth)_-_12px)]" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <a href="/posts/ubuntu24-10-xorg-fix/" class="transition group w-full block font-bold mb-3 text-3xl text-90
+        hover:text-[var(--primary)] dark:hover:text-[var(--primary)]
+        active:text-[var(--title-active)] dark:active:text-[var(--title-active)]
+        before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)]
+        before:absolute before:top-[35px] before:left-[18px] before:hidden md:before:block
+        " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复 <svg width="1em" height="1em" viewBox="0 0 24 24" class="inline text-[2rem] text-[var(--primary)] md:hidden translate-y-0.5 absolute" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[var(--primary)] text-[2rem] transition hidden md:inline absolute translate-y-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </a> <!-- metadata --> <div class="flex flex-wrap text-neutral-500 dark:text-neutral-400 items-center gap-4 gap-x-4 gap-y-2 mb-4"> <!-- publish date --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:calendar-today-outline-rounded">   <use href="#ai:material-symbols:calendar-today-outline-rounded"></use>  </svg> </div> <span class="text-50 text-sm font-medium">2025-02-09</span> </div> <!-- update date -->  <!-- categories --> <div class="flex items-center"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:book-2-outline-rounded">   <use href="#ai:material-symbols:book-2-outline-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <a href="/archive/?category=Linux" aria-label="View all posts in the Linux category" class="link-lg transition text-50 text-sm font-medium
+                            hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Linux </a> </div> </div> <!-- tags --> <div class="items-center hidden md:flex"> <div class="meta-icon"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-xl" data-icon="material-symbols:tag-rounded">   <use href="#ai:material-symbols:tag-rounded"></use>  </svg> </div> <div class="flex flex-row flex-nowrap items-center"> <div class="hidden mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Ubuntu" aria-label="View all posts with the Ubuntu tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Ubuntu </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Xrdp" aria-label="View all posts with the Xrdp tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Xrdp </a><div class="mx-1.5 text-[var(--meta-divider)] text-sm">/</div>
+                <a href="/archive/?tag=Xorgxrdp" aria-label="View all posts with the Xorgxrdp tag" class="link-lg transition text-50 text-sm font-medium
+                                hover:text-[var(--primary)] dark:hover:text-[var(--primary)] whitespace-nowrap"> Xorgxrdp </a>  </div> </div> </div> <!-- description --> <div class="transition text-75 mb-3.5 pr-4" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> Ubuntu 24.10 更新后，Xrdp 登录 Xorg 闪退的排查与修复方法。 </div> <!-- word count and read time  --> <div class="text-sm text-black/30 dark:text-white/30 flex gap-4 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 351  字 </div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;">|</div> <div data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> 2  分钟 </div> </div> </div> <a href="/posts/ubuntu24-10-xorg-fix/" aria-label="更新到 Ubuntu 24.10 后 Xrdp 连接后闪退修复" class="group max-h-[20vh] md:max-h-none mx-4 mt-4 -mb-2 md:mb-0 md:mx-0 md:mt-0 md:w-[var(--coverWidth)] relative md:absolute md:top-3 md:bottom-3 md:right-3 rounded-xl overflow-hidden active:scale-95" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <div class="absolute pointer-events-none z-10 w-full h-full group-hover:bg-black/30 group-active:bg-black/50 transition" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div> <div class="absolute pointer-events-none z-20 w-full h-full flex items-center justify-center " data-astro-cid-iyiqi2so style="--coverWidth: 28%;"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="transition opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 text-white text-5xl" data-astro-cid-iyiqi2so="true" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </div> <div class="w-full h-full overflow-hidden relative"> <div class="transition absolute inset-0 dark:bg-black/10 bg-opacity-50 pointer-events-none"></div>  <img src="https://api.041218.xyz/pic/Blog/20250209214612081.jpg" alt="Cover Image of the Post" class="w-full h-full object-cover" style="object-position: center"> </div> </a>  </div> <div class="transition border-t-[1px] border-dashed mx-6 border-black/10 dark:border-white/[0.15] last:border-t-0 md:hidden" data-astro-cid-iyiqi2so style="--coverWidth: 28%;"></div>  </div> <div class="mx-auto onload-animation flex flex-row gap-3 justify-center" style="animation-delay: calc(var(--content-delay) + 250ms)"> <a href class="btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11 disabled"> <svg width="1em" height="1em" class="text-[1.75rem]" data-icon="material-symbols:chevron-left-rounded">   <symbol id="ai:material-symbols:chevron-left-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m10.8 12l3.9 3.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-4.6-4.6q-.15-.15-.212-.325T8.425 12t.063-.375t.212-.325l4.6-4.6q.275-.275.7-.275t.7.275t.275.7t-.275.7z"/></symbol><use href="#ai:material-symbols:chevron-left-rounded"></use>  </svg> </a> <div class="bg-[var(--card-bg)] flex flex-row rounded-lg items-center text-neutral-700 dark:text-neutral-300 font-bold"> <div class="h-11 w-11 rounded-lg bg-[var(--primary)] flex items-center justify-center
+                    font-bold text-white dark:text-black/70"> 1 </div> </div> <a href class="btn-card overflow-hidden rounded-lg text-[var(--primary)] w-11 h-11 disabled"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="text-[1.75rem]" data-icon="material-symbols:chevron-right-rounded">   <use href="#ai:material-symbols:chevron-right-rounded"></use>  </svg> </a> </div>  <div class="footer col-span-2 onload-animation hidden lg:block"> <!--<div class="border-t border-[var(&#45;&#45;primary)] mx-16 border-dashed py-8 max-w-[var(&#45;&#45;page-width)] flex flex-col items-center justify-center px-6">--><div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div> <!--<div class="transition bg-[oklch(92%_0.01_var(&#45;&#45;hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">--> <div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6"> <div class="transition text-50 text-sm text-center">
+&copy; <span id="copyright-year">2026</span> Ctanhuawu. All Rights Reserved. /
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="/rss.xml">RSS</a> /
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="/sitemap-index.xml">Sitemap</a><br>
+Powered by
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> </div> </div> </div> </div> </main> <div class="footer col-span-2 onload-animation block lg:hidden"> <!--<div class="border-t border-[var(&#45;&#45;primary)] mx-16 border-dashed py-8 max-w-[var(&#45;&#45;page-width)] flex flex-col items-center justify-center px-6">--><div class="transition border-t border-black/10 dark:border-white/15 my-10 border-dashed mx-32"></div> <!--<div class="transition bg-[oklch(92%_0.01_var(&#45;&#45;hue))] dark:bg-black rounded-2xl py-8 mt-4 mb-8 flex flex-col items-center justify-center px-6">--> <div class="transition border-dashed border-[oklch(85%_0.01_var(--hue))] dark:border-white/15 rounded-2xl mb-12 flex flex-col items-center justify-center px-6"> <div class="transition text-50 text-sm text-center">
+&copy; <span id="copyright-year">2026</span> Ctanhuawu. All Rights Reserved. /
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="/rss.xml">RSS</a> /
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="/sitemap-index.xml">Sitemap</a><br>
+Powered by
+<a class="transition link text-[var(--primary)] font-medium" target="_blank" href="https://astro.build">Astro</a> </div> </div> </div> </div> <!-- There can't be a filter on parent element, or it will break `fixed` --><div class="back-to-top-wrapper hidden lg:block" data-astro-cid-eymb5ayk> <div id="back-to-top-btn" class="back-to-top-btn hide flex items-center rounded-2xl overflow-hidden transition" onclick="backToTop()" data-astro-cid-eymb5ayk> <button aria-label="Back to Top" class="btn-card h-[3.75rem] w-[3.75rem]" data-astro-cid-eymb5ayk> <svg width="1em" height="1em" class="mx-auto" data-astro-cid-eymb5ayk="true" data-icon="material-symbols:keyboard-arrow-up-rounded">   <symbol id="ai:material-symbols:keyboard-arrow-up-rounded" viewBox="0 0 24 24"><path fill="currentColor" d="m12 10.8l-3.9 3.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.6-4.6q.3-.3.7-.3t.7.3l4.6 4.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></symbol><use href="#ai:material-symbols:keyboard-arrow-up-rounded"></use>  </svg> </button> </div> </div>  <script>
+function backToTop() {
+    window.scroll({ top: 0, behavior: 'smooth' });
+}
+</script> </div> </div>  <div class="absolute w-full z-0 hidden 2xl:block"> <div class="relative max-w-[var(--page-width)] mx-auto"> <!-- TOC component --> <div id="toc-wrapper" class="hidden lg:block transition absolute top-0 -right-[var(--toc-width)] w-[var(--toc-width)] items-center toc-hide"> <div id="toc-inner-wrapper" class="fixed top-14 w-[var(--toc-width)] h-[calc(100vh_-_20rem)] overflow-y-scroll overflow-x-hidden hide-scrollbar"> <div id="toc" class="w-full h-full transition-swup-fade "> <div class="h-8 w-full"></div> <script type="module">class l extends HTMLElement{tocEl=null;visibleClass="visible";observer;anchorNavTarget=null;headingIdxMap=new Map;headings=[];sections=[];tocEntries=[];active=[];activeIndicator=null;constructor(){super(),this.observer=new IntersectionObserver(this.markVisibleSection,{threshold:0})}markVisibleSection=t=>{t.forEach(e=>{const i=e.target.children[0]?.getAttribute("id"),s=i?this.headingIdxMap.get(i):void 0;s!=null&&(this.active[s]=e.isIntersecting),e.isIntersecting&&this.anchorNavTarget==e.target.firstChild&&(this.anchorNavTarget=null)}),this.active.includes(!0)||this.fallback(),this.update()};toggleActiveHeading=()=>{let t=this.active.length-1,e=this.active.length-1,i=-1;for(;t>=0&&!this.active[t];)this.tocEntries[t].classList.remove(this.visibleClass),t--;for(;t>=0&&this.active[t];)this.tocEntries[t].classList.add(this.visibleClass),e=Math.min(e,t),i=Math.max(i,t),t--;for(;t>=0;)this.tocEntries[t].classList.remove(this.visibleClass),t--;if(e>i)this.activeIndicator?.setAttribute("style","opacity: 0");else{let s=this.tocEl?.getBoundingClientRect().top||0,n=this.tocEl?.scrollTop||0,o=this.tocEntries[e].getBoundingClientRect().top-s+n,c=this.tocEntries[i].getBoundingClientRect().bottom-s+n;this.activeIndicator?.setAttribute("style",`top: ${o}px; height: ${c-o}px`)}};scrollToActiveHeading=()=>{if(this.anchorNavTarget||!this.tocEl)return;const t=document.querySelectorAll(`#toc .${this.visibleClass}`);if(!t.length)return;const e=t[0],i=t[t.length-1],s=this.tocEl.clientHeight;let n;i.getBoundingClientRect().bottom-e.getBoundingClientRect().top<.9*s?n=e.offsetTop-32:n=i.offsetTop-s*.8,this.tocEl.scrollTo({top:n,left:0,behavior:"smooth"})};update=()=>{requestAnimationFrame(()=>{this.toggleActiveHeading(),this.scrollToActiveHeading()})};fallback=()=>{if(this.sections.length)for(let t=0;t<this.sections.length;t++){let e=this.sections[t].getBoundingClientRect().top,i=this.sections[t].getBoundingClientRect().bottom;if(this.isInRange(e,0,window.innerHeight)||this.isInRange(i,0,window.innerHeight)||e<0&&i>window.innerHeight)this.markActiveHeading(t);else if(e>window.innerHeight)break}};markActiveHeading=t=>{this.active[t]=!0};handleAnchorClick=t=>{const e=t.composedPath().find(i=>i instanceof HTMLAnchorElement);if(e){const i=decodeURIComponent(e.hash?.substring(1)),s=this.headingIdxMap.get(i);s!==void 0?this.anchorNavTarget=this.headings[s]:this.anchorNavTarget=null}};isInRange(t,e,i){return e<t&&t<i}connectedCallback(){const t=document.querySelector(".prose");t?t.addEventListener("animationend",()=>{this.init()},{once:!0}):console.debug("Animation element not found")}init(){if(this.tocEl=document.getElementById("toc-inner-wrapper"),!!this.tocEl&&(this.tocEl.addEventListener("click",this.handleAnchorClick,{capture:!0}),this.activeIndicator=document.getElementById("active-indicator"),this.tocEntries=Array.from(document.querySelectorAll("#toc a[href^='#']")),this.tocEntries.length!==0)){this.sections=new Array(this.tocEntries.length),this.headings=new Array(this.tocEntries.length);for(let t=0;t<this.tocEntries.length;t++){const e=decodeURIComponent(this.tocEntries[t].hash?.substring(1)),i=document.getElementById(e),s=i?.parentElement;i instanceof HTMLElement&&s instanceof HTMLElement&&(this.headings[t]=i,this.sections[t]=s,this.headingIdxMap.set(e,t))}this.active=new Array(this.tocEntries.length).fill(!1),this.sections.forEach(t=>this.observer.observe(t)),this.fallback(),this.update()}}disconnectedCallback(){this.sections.forEach(t=>this.observer.unobserve(t)),this.observer.disconnect(),this.tocEl?.removeEventListener("click",this.handleAnchorClick)}}customElements.get("table-of-contents")||customElements.define("table-of-contents",l);</script> <div class="h-8 w-full"></div> </div> </div> </div> <!-- #toc needs to exist for Swup to work normally -->  </div> </div>  <!-- increase the page height during page transition to prevent the scrolling animation from jumping --> <div id="page-height-extend" class="hidden h-[300vh]" data-astro-cid-sckkx6r4 style="--bannerOffset: 15vh;--banner-height-home: 65vh;--banner-height: 35vh;--configHue: 250;--page-width: 75rem;"></div>  <script type="module" src="/_astro/Layout.astro_astro_type_script_index_0_lang.DAHrxWCB.js"></script> <script type="module" src="/_astro/Layout.astro_astro_type_script_index_1_lang.BYXKWcYN.js"></script></body></html>
