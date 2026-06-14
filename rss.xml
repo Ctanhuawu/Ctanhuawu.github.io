@@ -8,7 +8,7 @@
 &lt;p&gt;最终效果就是：原本十几 MB 的字体，可能被拆成几个几十 KB 的小文件；加载速度提升明显，博客的个性化字体也保留，几乎两全其美。&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;在线字体分包器&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E5%9C%A8%E7%BA%BF%E5%AD%97%E4%BD%93%E5%88%86%E5%8C%85%E5%99%A8.png&quot; alt=&quot;在线字体分包器&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/12/%E5%9C%A8%E7%BA%BF%E5%AD%97%E4%BD%93%E5%88%86%E5%8C%85%E5%99%A8.png&quot; alt=&quot;在线字体分包器&quot; /&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -32,7 +32,7 @@
 &lt;li&gt;使用在线工具生成分片字体&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;将未分包的字体上传到在线字体分包器中，点击 &lt;strong&gt;点击开始字体分包&lt;/strong&gt;，等待完成后再点击 &lt;strong&gt;压缩下载 zip&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E5%AD%97%E4%BD%93%E5%88%86%E5%8C%85%E6%BC%94%E7%A4%BA.png&quot; alt=&quot;字体分包演示&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/12/%E5%AD%97%E4%BD%93%E5%88%86%E5%8C%85%E6%BC%94%E7%A4%BA.png&quot; alt=&quot;字体分包演示&quot; /&gt;&lt;/p&gt;
 &lt;p&gt;每个文件大概几十 KB，非常轻量。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;将字体上传到主题目录&lt;/li&gt;
@@ -75,7 +75,7 @@ inject:
 &lt;hr /&gt;
 &lt;h2&gt;效果展示&lt;/h2&gt;
 &lt;p&gt;可以看到分片加载的速度非常快。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://olist.041218.xyz/d/%E5%9B%BE%E5%BA%8A/Blog/2025/12/%E6%95%88%E6%9E%9C%E5%9B%BE.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/12/%E6%95%88%E6%9E%9C%E5%9B%BE.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
 </content:encoded></item><item><title>由于 CDN 下线导致的，安知鱼主题图片无法显示/加载</title><link>https://blog.ccwait.com/posts/hexo-anzhiyu-image-fix/</link><guid isPermaLink="true">https://blog.ccwait.com/posts/hexo-anzhiyu-image-fix/</guid><description>安知鱼主题图片无法显示时，如何定位失效 CDN 并替换为可用镜像。</description><pubDate>Sat, 16 Aug 2025 06:01:26 GMT</pubDate><content:encoded>&lt;h2&gt;引言&lt;/h2&gt;
 &lt;p&gt;在一次更新和调试中，我突然发现自己的博客所有图片都加载不出来，文章二维码也失效了。起初我还以为是主题配置出了错，但仔细排查后才发现，真正的原因是字节跳动公共静态资源库被下线，导致主题依赖的外部 JS 资源无法正常获取。&lt;/p&gt;
 &lt;p&gt;这篇文章记录了我定位问题的过程，以及通过替换 CDN 链接来解决故障的方法，希望能帮到遇到同样问题的朋友。&lt;/p&gt;
@@ -86,23 +86,23 @@ inject:
 &lt;li&gt;部分功能无法使用，如文章二维码&lt;/li&gt;
 &lt;li&gt;从主页进入文章可显示图片，但在文章页面刷新后无法显示图片&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222032165.png&quot; alt=&quot;症状表现&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/08/16/22-20250816222032165.png&quot; alt=&quot;症状表现&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;故障原因&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://linux.do/t/topic/862052&quot;&gt;字节跳动静态资源公共库因黑产问题下线&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222151765.png&quot; alt=&quot;字节跳动静态资源公共库因黑产问题下线&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/08/16/22-20250816222151765.png&quot; alt=&quot;字节跳动静态资源公共库因黑产问题下线&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;解决方法&lt;/h2&gt;
 &lt;h3&gt;定位故障原因&lt;/h3&gt;
 &lt;p&gt;在故障页面按下 &amp;lt;kbd&amp;gt;F12&amp;lt;/kbd&amp;gt;，进入网络页面点击刷新查看 JS 获取情况。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816222822500.png&quot; alt=&quot;定位故障示例&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/08/16/22-20250816222822500.png&quot; alt=&quot;定位故障示例&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;以 &lt;code&gt;qrcode.min.js&lt;/code&gt; 无法加载为例&lt;/h3&gt;
 &lt;p&gt;复制请求 URL，使用编辑器搜索定位后替换为可用的 CDN 即可，比如 VSCode。&lt;/p&gt;
 &lt;p&gt;将
 &lt;code&gt;https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;替换为
 &lt;code&gt;https://cdn.bootcdn.net/ajax/libs/qrcodejs/1.0.0/qrcode.min.js&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/22-20250816223300108.png&quot; alt=&quot;替换示例&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/08/16/22-20250816223300108.png&quot; alt=&quot;替换示例&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;可能的隐患&lt;/h2&gt;
 &lt;p&gt;在 &lt;code&gt;themes\anzhiyu\sw-rules.js&lt;/code&gt; 里还有对 &lt;code&gt;bytecdntp.com&lt;/code&gt; 的引用。&lt;/p&gt;
@@ -201,8 +201,8 @@ proxies:
 :::&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;最终效果&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/18-20250816183419209.png&quot; alt=&quot;clash服务&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/08/16/18-20250816183639583.png&quot; alt=&quot;yacd控制台&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/08/16/18-20250816183419209.png&quot; alt=&quot;clash服务&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/08/16/18-20250816183639583.png&quot; alt=&quot;yacd控制台&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;服务管理&lt;/h2&gt;
 &lt;ul&gt;
@@ -244,19 +244,19 @@ proxies:
 &lt;p&gt;:::note
 建议右键文件夹后在文件夹详细信息中复制原始路径备用。
 :::&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E8%AF%81%E4%B9%A6%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84.png&quot; alt=&quot;21-证书存放路径&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/07/23/21-%E8%AF%81%E4%B9%A6%E5%AD%98%E6%94%BE%E8%B7%AF%E5%BE%84.png&quot; alt=&quot;21-证书存放路径&quot; /&gt;&lt;/p&gt;
 &lt;h2&gt;使用 1Panel 申请 SSL 证书&lt;/h2&gt;
 &lt;h3&gt;1. 进入证书页添加域名 DNS 账号&lt;/h3&gt;
 &lt;p&gt;进入证书页后点击 DNS 账户按钮添加 DNS 账户。&lt;/p&gt;
 &lt;p&gt;进入 &lt;a href=&quot;https://dash.cloudflare.com/profile/api-tokens&quot;&gt;Cloudflare Dashboard&lt;/a&gt; 获取 API 令牌，点击创建令牌创建具有编辑 DNS 权限的令牌。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%88%9B%E5%BB%BAdns%E8%B4%A6%E6%88%B7.png&quot; alt=&quot;21-创建dns账户&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E8%8E%B7%E5%8F%96API%E4%BB%A4%E7%89%8C.png&quot; alt=&quot;21-获取API令牌&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/07/23/21-%E5%88%9B%E5%BB%BAdns%E8%B4%A6%E6%88%B7.png&quot; alt=&quot;21-创建dns账户&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/07/23/21-%E8%8E%B7%E5%8F%96API%E4%BB%A4%E7%89%8C.png&quot; alt=&quot;21-获取API令牌&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;2. 创建 Acme 账户&lt;/h3&gt;
 &lt;p&gt;填写邮箱后点击确定。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%88%9B%E5%BB%BAAcme%E8%B4%A6%E6%88%B7.png&quot; alt=&quot;21-创建Acme账户&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/07/23/21-%E5%88%9B%E5%BB%BAAcme%E8%B4%A6%E6%88%B7.png&quot; alt=&quot;21-创建Acme账户&quot; /&gt;&lt;/p&gt;
 &lt;h3&gt;3. 申请域名并设置推送文件夹证书&lt;/h3&gt;
 &lt;h4&gt;输入主域名后按需填写选项，开启自动续签，并设置证书推送目录&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6.png&quot; alt=&quot;21-申请证书&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/07/23/21-%E7%94%B3%E8%AF%B7%E8%AF%81%E4%B9%A6.png&quot; alt=&quot;21-申请证书&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;设置重命名脚本&lt;/h4&gt;
 &lt;p&gt;1Panel 申请的证书默认为 &lt;code&gt;fullchain.pem&lt;/code&gt; 和 &lt;code&gt;privkey.pem&lt;/code&gt;，重命名后更方便管理。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;# xxx 改为你的主域名
@@ -267,7 +267,7 @@ mv privkey.pem xxx.key
 &lt;hr /&gt;
 &lt;h2&gt;将证书上传到 FnOS&lt;/h2&gt;
 &lt;p&gt;将推送目录的证书下载后上传到 FnOS，中间证书可不填。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/2025/07/23/21-%E5%AF%BC%E5%85%A5%E8%AF%81%E4%B9%A6.png&quot; alt=&quot;21-导入证书&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/2025/07/23/21-%E5%AF%BC%E5%85%A5%E8%AF%81%E4%B9%A6.png&quot; alt=&quot;21-导入证书&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;使用软链接实现证书自动续签&lt;/h2&gt;
 &lt;h3&gt;1. 进入终端（可使用 1Panel 中的终端）&lt;/h3&gt;
@@ -345,12 +345,12 @@ Please consult the The X.Org Foundation support
 此方法我尝试了也没成功，有效性待定。
 :::&lt;/p&gt;
 &lt;h4&gt;1. 编辑 &lt;code&gt;/etc/apt/sources.list.d/ubuntu.sources&lt;/code&gt;，在 &lt;code&gt;oracular-backports&lt;/code&gt; 后面添加 &lt;code&gt;oracular-proposed&lt;/code&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/20250209222138586.png&quot; alt=&quot;编辑示例&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/20250209222138586.png&quot; alt=&quot;编辑示例&quot; /&gt;&lt;/p&gt;
 &lt;h4&gt;2. &lt;code&gt;sudo apt update&lt;/code&gt; 更新软件源&lt;/h4&gt;
 &lt;h4&gt;3. &lt;code&gt;sudo install xrdp/oracular-proposed&lt;/code&gt;，使用指定软件源更新 &lt;code&gt;xrdp&lt;/code&gt;&lt;/h4&gt;
 &lt;hr /&gt;
 &lt;h2&gt;使用远程桌面连接测试&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://api.041218.xyz/pic/Blog/xorgxrdp%E4%BF%AE%E5%A4%8D%E5%90%8E%E8%BF%9E%E6%8E%A5%E6%A1%8C%E9%9D%A2.png&quot; alt=&quot;连接修复成功&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://api.ccwait.com/pic/Blog/xorgxrdp%E4%BF%AE%E5%A4%8D%E5%90%8E%E8%BF%9E%E6%8E%A5%E6%A1%8C%E9%9D%A2.png&quot; alt=&quot;连接修复成功&quot; /&gt;&lt;/p&gt;
 &lt;hr /&gt;
 &lt;h2&gt;参考资料&lt;/h2&gt;
 &lt;ul&gt;
